@@ -1,24 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "reallydumbmod",
-  "version": "${version}",
-  "name": "Reallydumbmod",
-  "description": "Gain performance by doing some concerning things",
+  "id": "methane",
+  "version": "1.0",
+  "name": "Methane",
+  "description": "Gain performance by destroying lighting and fog",
   "authors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/reallydumbmod/icon.png",
+  "icon": "assets/methane/Methane-logo-Large.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "me.wolfie.reallydumbmod.client.ReallydumbmodClient"
-    ],
     "main": [
-      "me.wolfie.reallydumbmod.Reallydumbmod"
+      "me.wolfie.methane.Methane"
     ]
   },
   "mixins": [
-    "reallydumbmod.mixins.json"
+    "methane.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.12",

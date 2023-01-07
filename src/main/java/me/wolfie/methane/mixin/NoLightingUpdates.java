@@ -1,23 +1,17 @@
-package me.wolfie.reallydumbmod.mixin;
+package me.wolfie.methane.mixin;
 
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.packet.s2c.play.LightData;
 import net.minecraft.network.packet.s2c.play.LightUpdateS2CPacket;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.ChunkSectionPos;
-import net.minecraft.util.thread.ThreadExecutor;
 import net.minecraft.world.LightType;
-import net.minecraft.world.chunk.ChunkNibbleArray;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.WorldChunk;
 import net.minecraft.world.chunk.light.LightingProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.BitSet;
 import java.util.Iterator;
@@ -29,8 +23,8 @@ public abstract class NoLightingUpdates {
     private ClientWorld world;
 
     /**
-     * @author
-     * @reason
+     * @author AnOpenSauceDev
+     * @reason Disable Function
      */
     @Overwrite
     private void readLightData(int x, int z, LightData data) {

@@ -1,4 +1,4 @@
-package me.wolfie.reallydumbmod.mixin;
+package me.wolfie.methane.mixin;
 
 import com.mojang.blaze3d.platform.GlConst;
 import com.mojang.blaze3d.systems.RenderSystem;
