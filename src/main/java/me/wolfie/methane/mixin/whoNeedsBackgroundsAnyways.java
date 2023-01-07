@@ -46,7 +46,7 @@ public class whoNeedsBackgroundsAnyways { // Apparently Sodium does...
                     warned = true;
                     MinecraftClient.getInstance().player.sendMessage(Text.of("Hello there! It seems like you have Sodium installed."));
                     MinecraftClient.getInstance().player.sendMessage(Text.of("If you aren't seeing a bunch of weird 'lighting' bugs, ignore this."));
-                    MinecraftClient.getInstance().player.sendMessage(Text.of("In the case that you are... sorry, that's just how it works ¯\\_(ツ)_/¯"));
+                    MinecraftClient.getInstance().player.sendMessage(Text.of("In the case that you are... ¯\\_(ツ)_/¯"));
                 }
             }
         }

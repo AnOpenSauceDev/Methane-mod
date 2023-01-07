@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.0",
+  "version": "1.2",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and fog",
   "authors": [],
