@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "reallydumbmod",
+  "version": "${version}",
+  "name": "Reallydumbmod",
+  "description": "Gain performance by doing some concerning things",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/reallydumbmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.wolfie.reallydumbmod.client.ReallydumbmodClient"
+    ],
+    "main": [
+      "me.wolfie.reallydumbmod.Reallydumbmod"
+    ]
+  },
+  "mixins": [
+    "reallydumbmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "minecraft": "1.19.3"
+  }
+}

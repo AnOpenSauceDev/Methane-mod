@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.wolfie.reallydumbmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "NoLightingUpdates",
+    "ScrewWithGameRenderer",
+    "whoNeedsBackgroundsAnyways"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
