@@ -17,7 +17,7 @@ import java.util.BitSet;
 import java.util.Iterator;
 
 @Mixin(ClientPlayNetworkHandler.class)
-public abstract class NoLightingUpdates {
+public abstract class NoLightingUpdatesMixin {
 
     @Shadow
     private ClientWorld world;

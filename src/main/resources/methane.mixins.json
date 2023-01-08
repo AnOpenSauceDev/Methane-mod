@@ -3,10 +3,11 @@
   "minVersion": "0.8",
   "package": "me.wolfie.methane.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "me.wolfie.methane.mixin.plugin.SodiumWorkaround",
   "mixins": [
   ],
   "client": [
-    "NoLightingUpdates",
+    "NoLightingUpdatesMixin",
     "ScrewWithGameRenderer",
     "whoNeedsBackgroundsAnyways"
   ],
