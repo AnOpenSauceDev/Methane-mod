@@ -2,6 +2,7 @@ package me.wolfie.methane.mixin;
 
 import com.mojang.blaze3d.platform.GlConst;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
@@ -9,6 +10,7 @@ import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix3f;
@@ -53,19 +55,17 @@ public abstract class ScrewWithGameRenderer {
     @Shadow
     abstract void loadProjectionMatrix(Matrix4f matrix4f);
 
+    private static boolean warned = false;
+
     /**
      * @author
      * @reason
      */
     @Overwrite
     public void renderWorld(float tickDelta, long limitTime, MatrixStack matrices) {
-        /*
-        this.lightmapTextureManager.update(tickDelta);
-        if (this.client.getCameraEntity() == null) {
-            this.client.setCameraEntity(this.client.player);
-        }
 
-         */
+
+
 
         this.updateTargetedEntity(tickDelta);
         this.client.getProfiler().push("center");
