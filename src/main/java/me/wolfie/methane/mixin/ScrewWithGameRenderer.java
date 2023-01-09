@@ -12,10 +12,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RotationAxis;
-import org.joml.Matrix3f;
-import org.joml.Matrix4f;
-import org.joml.Vector3f;
+import net.minecraft.util.math.Matrix3f;
+import net.minecraft.util.math.Matrix4f;
+import net.minecraft.util.math.Vec3f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -85,23 +84,22 @@ public abstract class ScrewWithGameRenderer {
 
         float f = ((Double)this.client.options.getDistortionEffectScale().getValue()).floatValue();
         float g = MathHelper.lerp(tickDelta, this.client.player.lastNauseaStrength, this.client.player.nextNauseaStrength) * f * f;
-        if (g > 0.0F) {
+        if (g > 0.0f) {
             int i = this.client.player.hasStatusEffect(StatusEffects.NAUSEA) ? 7 : 20;
-            float h = 5.0F / (g * g + 5.0F) - g * 0.04F;
+            float h = 5.0f / (g * g + 5.0f) - g * 0.04f;
             h *= h;
-            RotationAxis rotationAxis = RotationAxis.of(new Vector3f(0.0F, MathHelper.SQUARE_ROOT_OF_TWO / 2.0F, MathHelper.SQUARE_ROOT_OF_TWO / 2.0F));
-            matrixStack.multiply(rotationAxis.rotationDegrees(((float)this.ticks + tickDelta) * (float)i));
-            matrixStack.scale(1.0F / h, 1.0F, 1.0F);
+            Vec3f vec3f = new Vec3f(0.0f, MathHelper.SQUARE_ROOT_OF_TWO / 2.0f, MathHelper.SQUARE_ROOT_OF_TWO / 2.0f);
+            matrixStack.multiply(vec3f.getDegreesQuaternion(((float)this.ticks + tickDelta) * (float)i));
+            matrixStack.scale(1.0f / h, 1.0f, 1.0f);
             float j = -((float)this.ticks + tickDelta) * (float)i;
-            matrixStack.multiply(rotationAxis.rotationDegrees(j));
+            matrixStack.multiply(vec3f.getDegreesQuaternion(j));
         }
-
         Matrix4f matrix4f = matrixStack.peek().getPositionMatrix();
         this.loadProjectionMatrix(matrix4f);
         camera.update(this.client.world, (Entity)(this.client.getCameraEntity() == null ? this.client.player : this.client.getCameraEntity()), !this.client.options.getPerspective().isFirstPerson(), this.client.options.getPerspective().isFrontView(), tickDelta);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(camera.getPitch()));
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(camera.getYaw() + 180.0F));
-        Matrix3f matrix3f = (new Matrix3f(matrices.peek().getNormalMatrix())).invert();
+        matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(camera.getPitch()));
+        matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(camera.getYaw() + 180.0f));
+        Matrix3f matrix3f = matrices.peek().getNormalMatrix().copy();
         RenderSystem.setInverseViewRotationMatrix(matrix3f);
         this.client.worldRenderer.setupFrustum(matrices, camera.getPos(), this.getBasicProjectionMatrix(Math.max(d, (double)(Integer)this.client.options.getFov().getValue())));
         this.client.worldRenderer.render(matrices, tickDelta, limitTime, false, camera, MinecraftClient.getInstance().gameRenderer, this.lightmapTextureManager, matrix4f);
