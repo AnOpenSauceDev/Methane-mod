@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(value = GameRenderer.class, priority = 900)
+@Mixin(value = GameRenderer.class, priority = 400) //exordium test
 public abstract class ScrewWithGameRenderer {
 
     @Shadow
