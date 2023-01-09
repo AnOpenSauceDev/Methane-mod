@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.2",
+  "version": "1.4",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and fog",
   "authors": [],
@@ -18,7 +18,7 @@
     "methane.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.12",
+    "fabricloader": ">=0.14.0",
     "minecraft": "1.19.3"
   }
 }
