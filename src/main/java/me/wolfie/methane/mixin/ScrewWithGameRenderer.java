@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(GameRenderer.class)
+@Mixin(value = GameRenderer.class, priority = 900)
 public abstract class ScrewWithGameRenderer {
 
     @Shadow
@@ -76,12 +76,12 @@ public abstract class ScrewWithGameRenderer {
         MatrixStack matrixStack = new MatrixStack();
         double d = this.getFov(camera, tickDelta, true);
         matrixStack.multiplyPositionMatrix(this.getBasicProjectionMatrix(d));
-        /*this.bobViewWhenHurt(matrixStack, tickDelta);
+        this.bobViewWhenHurt(matrixStack, tickDelta);
         if ((Boolean)this.client.options.getBobView().getValue()) {
             this.bobView(matrixStack, tickDelta);
         }
 
-         */
+
 
         float f = ((Double)this.client.options.getDistortionEffectScale().getValue()).floatValue();
         float g = MathHelper.lerp(tickDelta, this.client.player.lastNauseaStrength, this.client.player.nextNauseaStrength) * f * f;
@@ -116,6 +116,12 @@ public abstract class ScrewWithGameRenderer {
 
         this.client.getProfiler().pop();
     }
+
+    @Shadow
+    protected abstract void bobView(MatrixStack matrixStack, float tickDelta);
+
+    @Shadow
+    protected abstract void bobViewWhenHurt(MatrixStack matrixStack, float tickDelta);
 
     @Shadow
     protected abstract boolean shouldRenderBlockOutline();
