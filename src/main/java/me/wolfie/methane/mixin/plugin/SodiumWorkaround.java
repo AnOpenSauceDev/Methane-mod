@@ -15,7 +15,6 @@ public class SodiumWorkaround implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        System.out.println("Mixin Name: " + mixinClassName + " is being decided upon, targeting " + targetClassName);
         if(mixinClassName.endsWith("s")) {
             //System.out.println("round 2 of deciding");
             if (FabricLoader.getInstance().isModLoaded("sodium")) {

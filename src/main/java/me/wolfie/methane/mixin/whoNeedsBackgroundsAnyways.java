@@ -54,7 +54,7 @@ public class whoNeedsBackgroundsAnyways { // Apparently Sodium does...
     @Overwrite
     public static void render(Camera camera, float tickDelta, ClientWorld world, int viewDistance, float skyDarkness) {
 
-
+            //Side note: we COULD remove all this code, but then the horizon would be black
 
             Entity entity = camera.getFocusedEntity();
 

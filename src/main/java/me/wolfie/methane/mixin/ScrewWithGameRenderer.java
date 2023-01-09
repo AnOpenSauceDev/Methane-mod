@@ -69,7 +69,7 @@ public abstract class ScrewWithGameRenderer {
 
         this.updateTargetedEntity(tickDelta);
         this.client.getProfiler().push("center");
-        //boolean bl = this.shouldRenderBlockOutline();
+        boolean bl = this.shouldRenderBlockOutline();
         this.client.getProfiler().swap("camera");
         Camera camera = this.camera;
         this.viewDistance = (float)(this.client.options.getClampedViewDistance() * 16);
@@ -117,6 +117,8 @@ public abstract class ScrewWithGameRenderer {
         this.client.getProfiler().pop();
     }
 
+    @Shadow
+    protected abstract boolean shouldRenderBlockOutline();
 
 
 }
