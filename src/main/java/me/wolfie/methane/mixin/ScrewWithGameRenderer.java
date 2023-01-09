@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(GameRenderer.class)
+@Mixin(value = GameRenderer.class, priority = 900)
 public abstract class ScrewWithGameRenderer {
 
     @Shadow
@@ -53,8 +53,6 @@ public abstract class ScrewWithGameRenderer {
 
     @Shadow
     abstract void loadProjectionMatrix(Matrix4f matrix4f);
-
-    private static boolean warned = false;
 
     /**
      * @author
