@@ -104,7 +104,7 @@ public abstract class ScrewWithGameRenderer {
         Matrix3f matrix3f = (new Matrix3f(matrices.peek().getNormalMatrix())).invert();
         RenderSystem.setInverseViewRotationMatrix(matrix3f);
         this.client.worldRenderer.setupFrustum(matrices, camera.getPos(), this.getBasicProjectionMatrix(Math.max(d, (double)(Integer)this.client.options.getFov().getValue())));
-        this.client.worldRenderer.render(matrices, tickDelta, limitTime, false, camera, MinecraftClient.getInstance().gameRenderer, this.lightmapTextureManager, matrix4f);
+        this.client.worldRenderer.render(matrices, tickDelta, limitTime, bl, camera, MinecraftClient.getInstance().gameRenderer, this.lightmapTextureManager, matrix4f);
         this.client.getProfiler().swap("hand");
 
         if (this.renderHand) {
