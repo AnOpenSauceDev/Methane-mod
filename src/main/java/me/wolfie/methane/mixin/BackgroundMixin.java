@@ -1,23 +1,12 @@
 package me.wolfie.methane.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import me.wolfie.methane.Methane;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BiomeTags;
-import net.minecraft.text.Text;
 import net.minecraft.util.CubicSampler;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
@@ -28,7 +17,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(value = BackgroundRenderer.class, priority = 999)
-public class whoNeedsBackgroundsAnyways { // Apparently Sodium does...
+public class BackgroundMixin {
 
     @Shadow
     private static final int field_32685 = 96;
