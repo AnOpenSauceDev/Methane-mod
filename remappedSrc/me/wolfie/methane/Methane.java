@@ -2,6 +2,11 @@ package me.wolfie.methane;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.BackgroundRenderer;
+import net.minecraft.client.render.FogShape;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

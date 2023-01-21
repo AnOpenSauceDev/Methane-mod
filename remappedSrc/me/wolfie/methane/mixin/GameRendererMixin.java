@@ -2,9 +2,15 @@ package me.wolfie.methane.mixin;
 
 import com.mojang.blaze3d.platform.GlConst;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.Camera;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.world.level.lighting.LayerLightEngine;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.LightmapTextureManager;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
@@ -16,7 +22,7 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class GameRendererMixin {
 
     @Shadow
-    LayerLightEngine lightmapTextureManager;
+    LightmapTextureManager lightmapTextureManager;
 
     @Shadow
     MinecraftClient client;
@@ -32,6 +38,7 @@ public abstract class GameRendererMixin {
 
     @Shadow
     public abstract double getFov(Camera camera, float tickDelta, boolean changingFov);
+
     @Shadow
     public abstract Matrix4f getBasicProjectionMatrix(double fov);
 

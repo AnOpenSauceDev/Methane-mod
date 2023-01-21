@@ -1,6 +1,6 @@
 package me.wolfie.methane;
 
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.MinecraftClient;
 
 import static me.wolfie.methane.Methane.MethaneLogger;
 
@@ -8,7 +8,7 @@ public class verifyIfClient {
     public static void Verify(){
         new Thread(() ->{
             try {
-                if (Class.forName("net.minecraft.client.Minecraft").getClass() != null) {
+                if (Class.forName("net.minecraft.client.MinecraftClient").getClass() != null) {
                     // do nothing, everything went as expected
                 }
             }catch (RuntimeException ex){
