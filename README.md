@@ -1,6 +1,7 @@
 [modrinth](https://modrinth.com/mod/methane)
 
 # Methane
-A cursed performance mod.
+A performance mod.
 
-[my other mods](https://github.com/stars/AnOpenSauceDev/lists/my-mods)
+### for other programmers
+The code here is a pretty big mess of mixins (made in a couple days). If you want to learn anything about modding, i would suggest looking at [my other mods](https://github.com/stars/AnOpenSauceDev/lists/my-mods).
