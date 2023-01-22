@@ -7,7 +7,7 @@ Mod missing? Suggest it in a pull request.
 
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
-Starlight|⚠|1.4.6
+Starlight|⚠|None
 Sodium|🔧|1.4.6
 Vivecraft|✔|1.4.6
 Iris Shaders|⚠|1.4.6
