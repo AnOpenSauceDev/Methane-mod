@@ -26,4 +26,4 @@ Architectury|✔|1.4.6
 Camera Utils|✔|1.4.6
 Mod Menu|✔|1.4.6
 Rolling Health|✔|Early dev build
-ReplayMod|🚧|1.4.6
+ReplayMod|✔|1.4.6
