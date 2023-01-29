@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 
 public class Methane implements ModInitializer {
 
+    public static boolean ModActive = true; // for toggles
+
     public static Logger MethaneLogger = LoggerFactory.getLogger("Methane");
     @Override
     public void onInitialize() {
