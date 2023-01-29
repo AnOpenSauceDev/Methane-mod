@@ -62,6 +62,7 @@ public abstract class GameRendererMixin {
     @Overwrite
     public void renderWorld(float tickDelta, long limitTime, MatrixStack matrices) {
 
+        
         this.updateTargetedEntity(tickDelta);
         this.client.getProfiler().push("center");
         boolean bl = this.shouldRenderBlockOutline();

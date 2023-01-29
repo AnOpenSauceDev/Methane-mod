@@ -105,6 +105,7 @@ public abstract class LightingUpdateMixin {
      */
     @Overwrite
     private void scheduleRenderChunk(WorldChunk chunk, int x, int z) {
+
       //  LightingProvider lightingProvider = this.world.getChunkManager().getLightingProvider();
         ChunkSection[] chunkSections = chunk.getSectionArray();
         ChunkPos chunkPos = chunk.getPos();
