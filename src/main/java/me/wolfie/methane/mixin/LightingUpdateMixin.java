@@ -122,6 +122,7 @@ public abstract class LightingUpdateMixin implements PacketListener {
     }
 
     public void updateChunkVanilla(int x, int z, LightData lightData){
+        MinecraftClient.getInstance().world.getChunkManager().unload(x,z);
         this.world.enqueueChunkUpdate(() -> {
             this.readLightData(x, z, lightData);
             WorldChunk worldChunk = this.world.getChunkManager().getWorldChunk(x, z, false);
