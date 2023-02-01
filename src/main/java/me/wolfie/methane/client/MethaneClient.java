@@ -35,9 +35,10 @@ public class MethaneClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
     
             while (MethaneToggle.wasPressed()){
+                //ClientWorld world = client.world;
                 Methane.ModActive = !Methane.ModActive;
                 client.player.sendMessage(Text.of("Set Methane's status to: " + Methane.ModActive + ".")); // make me translatable!
-                //client.world.reloadColor();
+                //client.joinWorld(world);
             }
         });
     }

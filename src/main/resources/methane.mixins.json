@@ -7,9 +7,10 @@
   "mixins": [
   ],
   "client": [
-    "LightingUpdateMixin",
+    "BackgroundMixin",
+    "ClientPopUpMixin",
     "GameRendererMixin",
-    "BackgroundMixin"
+    "LightingUpdateMixin"
   ],
   "injectors": {
     "defaultRequire": 1
