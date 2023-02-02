@@ -16,6 +16,8 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
 import org.lwjgl.glfw.GLFW;
 
+import static me.wolfie.methane.Methane.ModActive;
+
 public class MethaneClient implements ClientModInitializer {
 
     public KeyBinding MethaneToggle;
@@ -36,8 +38,12 @@ public class MethaneClient implements ClientModInitializer {
     
             while (MethaneToggle.wasPressed()){
                 //ClientWorld world = client.world;
-                Methane.ModActive = !Methane.ModActive;
-                client.player.sendMessage(Text.of("Set Methane's status to: " + Methane.ModActive + ".")); // make me translatable!
+                ModActive = !ModActive;
+                if(ModActive) {
+                    client.player.sendMessage(Text.translatable("methane.active"));
+                }else {
+                    client.player.sendMessage(Text.translatable("methane.offline"));
+                }
                 //client.joinWorld(world);
             }
         });
