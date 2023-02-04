@@ -34,7 +34,7 @@ public abstract class ClientPopUpMixin {
      * @author
      * @reason
      */
-    /* /// removed for now, its a little unessecary as of now
+    /* /// removed for now, it's a little unessecary as of now
     @Overwrite
     public void joinWorld(ClientWorld world) {
         ProgressScreen progressScreen = new ProgressScreen(true);

@@ -62,7 +62,6 @@ public abstract class GameRendererMixin {
      */
     @Overwrite
     public void renderWorld(float tickDelta, long limitTime, MatrixStack matrices) {
-
         if(Methane.ModActive){
         this.updateTargetedEntity(tickDelta);
         this.client.getProfiler().push("center");
