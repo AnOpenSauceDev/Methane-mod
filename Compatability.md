@@ -8,22 +8,22 @@ Mod missing? Suggest it in a pull request.
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
 Starlight|⚠|None
-Sodium|🔧|Methane-Next
-Vivecraft|✔|1.4.6
-Iris Shaders|⚠|1.4.6
-Exordium|✔|1.4.6
+Sodium|🔧|1.5
+Vivecraft|✔|1.5
+Iris Shaders|⚠|1.5
+Exordium|✔|1.5
 DashLoader|✔|1.4.6
-Lithium|✔|1.4.6
-Smooth Boot|✔|1.4.6
-FerriteCore|✔|1.4.6
-LazyDFU|✔|1.4.6
-C2ME|✔|1.4.6
-Carpet|✔|1.4.6
-Indium|✔|1.4.6
+Lithium|✔|1.5
+Smooth Boot|✔|1.5
+FerriteCore|✔|1.5
+LazyDFU|✔|1.5
+C2ME|✔|1.5
+Carpet|✔|1.5
+Indium|✔|1.5
 MemoryLeakFix|✔|1.4.6
-Krypton|✔|1.4.6
-Architectury|✔|1.4.6
-Camera Utils|✔|1.4.6
-Mod Menu|✔|1.4.6
+Krypton|✔|1.5
+Architectury|✔|1.5
+Camera Utils|✔|1.5
+Mod Menu|✔|1.5
 Rolling Health|✔|Early dev build
-ReplayMod|✔|1.4.6
+ReplayMod|✔|1.5
