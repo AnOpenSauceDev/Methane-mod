@@ -1,4 +1,9 @@
-# Methane-Next
+# Methane
+A performance mod.
 
-Experimental (and unstable) features that **_could_** or are **_planned_** be put into methane <br>
-blockers to development can be found [over here](https://github.com/AnOpenSauceDev/Methane-mod/blob/methane-next/next-blockers.md)
+### Mod compat
+[available here.](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/Compatability.md)
+
+### for other programmers
+The code here is a pretty big mess of mixins (initally made in a couple days). If you want to learn anything about modding, i would suggest looking at [my other mods.](https://github.com/stars/AnOpenSauceDev/lists/my-mods) <br>
+for those who want to _~~suffer~~_ try out new things, have a look at the unstable [methane-next](https://github.com/AnOpenSauceDev/Methane-mod/tree/methane-next)
