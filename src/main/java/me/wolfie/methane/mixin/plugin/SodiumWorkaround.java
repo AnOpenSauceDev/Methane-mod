@@ -11,17 +11,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 
+import static me.wolfie.methane.Methane.MethaneLogger;
+
 public class SodiumWorkaround implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if(mixinClassName.equals("BackgroundMixin")) {
+        //MethaneLogger.error(String.valueOf(mixinClassName.equals("me.wolfie.methane.mixin.BackgroundMixin")) + " , classname is: " + mixinClassName);
+        if(mixinClassName.equals("me.wolfie.methane.mixin.BackgroundMixin")) {
             //System.out.println("round 2 of deciding");
             if (FabricLoader.getInstance().isModLoaded("sodium")) {
-               // System.out.println("no");
                 return false;
             } else {
-                //System.out.println("yes");
                 return true;
             }
         }else {
@@ -29,8 +30,6 @@ public class SodiumWorkaround implements IMixinConfigPlugin {
             return true;
         }
     }
-
-    // Boilerplate
 
     @Override
     public void onLoad(String mixinPackage) {

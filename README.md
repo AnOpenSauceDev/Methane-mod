@@ -1,5 +1,3 @@
-[modrinth](https://modrinth.com/mod/methane)
-
 # Methane
 A performance mod.
 

@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "me.wolfie.methane.Methane"
+    ],
+    "client": [
+      "me.wolfie.methane.client.MethaneClient"
     ]
   },
   "mixins": [
