@@ -8,7 +8,7 @@ Mod missing? Suggest it in a pull request.
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
 Starlight|⚠|None
-Sodium|🔧|1.4.6
+Sodium|🔧|Methane-Next
 Vivecraft|✔|1.4.6
 Iris Shaders|⚠|1.4.6
 Exordium|✔|1.4.6
