@@ -7,9 +7,10 @@
   "mixins": [
   ],
   "client": [
-    "NoLightingUpdatesMixin",
-    "ScrewWithGameRenderer",
-    "whoNeedsBackgroundsAnyways"
+    "BackgroundMixin",
+    "ClientPopUpMixin",
+    "GameRendererMixin",
+    "LightingUpdateMixin"
   ],
   "injectors": {
     "defaultRequire": 1
