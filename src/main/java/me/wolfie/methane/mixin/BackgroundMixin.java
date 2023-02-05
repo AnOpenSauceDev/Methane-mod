@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeAccess;
-import org.joml.Vector3f;
+import net.minecraft.util.math.Vec3f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -76,7 +76,7 @@ public class BackgroundMixin {
             blue = (float) vec3d3.getZ();
             if (viewDistance >= 4) {
                 f = MathHelper.sin(world.getSkyAngleRadians(tickDelta)) > 0.0F ? -1.0F : 1.0F;
-                Vector3f vector3f = new Vector3f(f, 0.0F, 0.0F);
+                Vec3f vector3f = new Vec3f(f, 0.0F, 0.0F);
                 h = camera.getHorizontalPlane().dot(vector3f);
                 if (h < 0.0F) {
                     h = 0.0F;
