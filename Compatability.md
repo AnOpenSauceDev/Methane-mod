@@ -9,7 +9,7 @@ Mod missing? Suggest it in a pull request.
 |------|:------:|--------:|
 Starlight|⚠|None
 Sodium|🔧|1.5
-Vivecraft|✔|1.5
+Vivecraft (VR+NONVR)|✔|1.5
 Iris Shaders|⚠|1.5
 Exordium|✔|1.5
 DashLoader|✔|1.4.6
