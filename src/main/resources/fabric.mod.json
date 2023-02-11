@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.4",
+  "version": "1.5.1",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and fog",
-  "authors": [],
+  "authors": ["AnOpenSauceDev"],
   "contact": {},
   "license": "MIT",
   "icon": "assets/methane/Methane-logo-Large.png",

@@ -20,9 +20,9 @@ public class Methane implements ModInitializer {
         MethaneLogger.info("Methane has loaded!");
         verifyIfClient.Verify();
         if (FabricLoader.getInstance().isModLoaded("sodium")) {
-            MethaneLogger.warn("Hello there! It seems like you have Sodium installed.");
-            MethaneLogger.warn("Due to this, some optimizations on things like fog have been disabled.");
-            MethaneLogger.warn("That being said, everything else 'should' work fine.");
+            // TODO: make these translatable later on
+            MethaneLogger.warn("--- Sodium has been detected! ---");
+            MethaneLogger.warn("Because of this, some minor fog-related things have been disabled.");
         }
     }
 
