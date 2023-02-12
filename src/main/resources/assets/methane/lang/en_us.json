@@ -1,4 +1,5 @@
 {
-  "methane.active": "Methane activated, please re-join your world for this to take effect",
-  "methane.offline": "Methane disabled, please re-join your world for this to fully take effect"
+  "methane.active": "Methane activated, please restart minecraft for this to take effect",
+  "methane.offline": "Methane disabled, please re-join your world for this to fully take effect",
+  "key.methane.toggle": "Toggle Methane"
 }
