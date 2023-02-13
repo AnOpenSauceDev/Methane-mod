@@ -10,12 +10,18 @@
   "icon": "assets/methane/Methane-logo-Large.png",
   "environment": "*",
   "entrypoints": {
+    "main": [
+      "me.wolfie.methane.Methane"
+    ],
     "client": [
-      "me.wolfie.methane.Methane",
+
       "me.wolfie.methane.client.MethaneClient"
     ],
     "server": [
       "me.wolfie.methane.server.MethaneServerError"
+    ],
+    "modmenu": [
+      "me.wolfie.methane.ModMenuIntegration"
     ]
   },
   "mixins": [
