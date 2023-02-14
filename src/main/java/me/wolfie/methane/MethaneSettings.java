@@ -14,5 +14,5 @@ public class MethaneSettings implements ConfigData {
     public static boolean disablePowderedSnowFog = true; // pretty self-explanatory
     @Comment("(you should probably disable this)")
     public static boolean disableThickFog = false; // Nether Fog pass
-    public static boolean disableSkyFog = false; // i think this is another fog pass
+    public static boolean disableSkyFog = false; // I think this is another fog pass
 }
