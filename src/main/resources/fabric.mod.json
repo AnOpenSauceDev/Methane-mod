@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and/or fog",
   "authors": ["AnOpenSauceDev"],
