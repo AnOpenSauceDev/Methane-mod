@@ -1,11 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "name": "Methane",
-  "description": "Gain performance by destroying lighting and fog",
+  "description": "Gain performance by destroying lighting and/or fog",
   "authors": ["AnOpenSauceDev"],
-  "contact": {},
+  "contact": {
+    "issues": "https://github.com/AnOpenSauceDev/Methane-mod/issues"
+  },
   "license": "MIT",
   "icon": "assets/methane/Methane-logo-Large.png",
   "environment": "*",
