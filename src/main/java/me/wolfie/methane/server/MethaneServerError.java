@@ -9,6 +9,6 @@ public class MethaneServerError implements DedicatedServerModInitializer {
 
     @Override
     public void onInitializeServer() {
-        MethaneLogger.error("Methane is running on the server! This mod is client-only! Consider removing Methane from your server");
+        MethaneLogger.error("Methane is running on the server! This mod is client-only! Consider removing Methane from your server.");
     }
 }
