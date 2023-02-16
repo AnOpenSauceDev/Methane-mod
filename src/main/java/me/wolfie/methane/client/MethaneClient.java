@@ -18,7 +18,7 @@ public class MethaneClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         // this causes us to need the Fabric API.
-        MethaneToggle = KeyBindingHelper.registerKeyBinding( new KeyBinding(
+        MethaneToggle = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                         "key.methane.toggle",
                         InputUtil.Type.KEYSYM,
                         GLFW.GLFW_KEY_BACKSLASH,
@@ -28,9 +28,7 @@ public class MethaneClient implements ClientModInitializer {
 
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-    
             while (MethaneToggle.wasPressed()){
-                //ClientWorld world = client.world;
                 ModActive = !ModActive;
                 if(ModActive) {
                     client.player.sendMessage(Text.translatable("methane.active"));
@@ -39,5 +37,6 @@ public class MethaneClient implements ClientModInitializer {
                 }
             }
         });
+
     }
 }
