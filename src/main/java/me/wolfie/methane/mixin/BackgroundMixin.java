@@ -21,7 +21,7 @@ public class BackgroundMixin {
      */
     @Inject(method = "applyFog", at = @At("HEAD"), cancellable = true)
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
-        if (!Methane.ModActive) return;
+        if (!Methane.ModActive && !MethaneSettings.persistFogSettings) return;
 
         if (hasBlindOrDark(camera.getFocusedEntity())) return;
 

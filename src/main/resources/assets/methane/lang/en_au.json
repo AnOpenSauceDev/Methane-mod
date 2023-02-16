@@ -1,5 +1,13 @@
 {
   "methane.active": "Methane activated, please restart minecraft for this to take effect",
   "methane.offline": "Methane offline, please re-join your world for this to fully take effect",
-  "key.methane.toggle": "Toggle Methane"
+  "key.methane.toggle": "Toggle Methane",
+  "category.methane.keys": "Methane Keybinds",
+  "text.autoconfig.methane.option.disableAirFog": "Disable Air Fog",
+  "text.autoconfig.methane.option.disableWaterFog": "Disable Underwater Fog",
+  "text.autoconfig.methane.option.disableLavaFog": "Disable Lava Fog",
+  "text.autoconfig.methane.option.disablePowderedSnowFog": "Disable Powdered Snow Fog",
+  "text.autoconfig.methane.option.disableThickFog": "Disable Nether Fog",
+  "text.autoconfig.methane.option.disableSkyFog": "Disable Sky Fog",
+  "text.autoconfig.methane.option.persistFogSettings": "Persist Fog?"
 }

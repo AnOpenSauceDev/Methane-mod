@@ -29,3 +29,4 @@ Mod missing? Suggest it in a pull request.
 |Mod Menu|✔|1.5|
 |Rolling Health|✔|Early dev build|
 |ReplayMod|✔|1.5|
+|Cloth Config|✔|1.6.2|
