@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: 🌿 checkout branch
     - uses: actions/checkout@v3
     - name: Set up JDK ☕
       uses: actions/setup-java@v3
