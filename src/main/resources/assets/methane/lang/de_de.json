@@ -1,0 +1,13 @@
+{
+  "methane.active": "Methane aktiviert. Starte Minecraft neu um die Änderungen zu sehen.",
+  "methane.offline": "Methane offline. Tritt dem Server erneut bei, um die Änderungen zu sehen.",
+  "key.methane.toggle": "Methane An/Aus",
+  "category.methane.keys": "Methane",
+  "text.autoconfig.methane.option.disableAirFog": "Deaktiviere Nebel in der Luft",
+  "text.autoconfig.methane.option.disableWaterFog": "Deaktiviere Nebel in Wasser",
+  "text.autoconfig.methane.option.disableLavaFog": "Deaktiviere Nebel in Lava",
+  "text.autoconfig.methane.option.disablePowderedSnowFog": "Deaktiviere Nebel in Pulverschnee",
+  "text.autoconfig.methane.option.disableThickFog": "Deaktiviere Nebel im Nether",
+  "text.autoconfig.methane.option.disableSkyFog": "Deaktiviere Nebel im Himmel",
+  "text.autoconfig.methane.option.persistFogSettings": "Behalte Nebeländerungen beim deaktivieren von Methane?"
+}

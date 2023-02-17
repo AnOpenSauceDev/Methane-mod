@@ -1,11 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.4",
+  "version": "1.6.3",
   "name": "Methane",
-  "description": "Gain performance by destroying lighting and fog",
-  "authors": [],
-  "contact": {},
+  "description": "Gain performance by destroying lighting and/or fog",
+  "authors": ["AnOpenSauceDev"],
+  "contact": {
+    "issues": "https://github.com/AnOpenSauceDev/Methane-mod/issues"
+  },
   "license": "MIT",
   "icon": "assets/methane/Methane-logo-Large.png",
   "environment": "*",
@@ -14,7 +16,14 @@
       "me.wolfie.methane.Methane"
     ],
     "client": [
+
       "me.wolfie.methane.client.MethaneClient"
+    ],
+    "server": [
+      "me.wolfie.methane.server.MethaneServerError"
+    ],
+    "modmenu": [
+      "me.wolfie.methane.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -22,6 +31,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.0",
-    "minecraft": "1.19.3"
+    "minecraft": "1.19.x"
   }
 }
