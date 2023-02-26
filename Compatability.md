@@ -10,9 +10,9 @@ Mod missing? Suggest it in a pull request.
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
 |Starlight|⚠|None|
-|Sodium|🔧|1.5|
+|Sodium|✔|1.6.3|
 |Vivecraft (VR+NONVR)|✔|1.5|
-|Iris Shaders|⚠|1.5|
+|Iris Shaders|🔧|1.5|
 |Exordium|✔|1.5|
 |DashLoader|✔|1.4.6|
 |Lithium|✔|1.5|
