@@ -26,7 +26,7 @@ Mod missing? Suggest it in a pull request.
 |Krypton|✔|1.5|
 |Architectury|✔|1.5|
 |Camera Utils|✔|1.5|
-|Mod Menu|✔|1.5|
+|Mod Menu|✔|1.6.3|
 |Rolling Health|✔|Early dev build|
 |ReplayMod|✔|1.5|
-|Cloth Config|✔|1.6.2|
+|Cloth Config|✔|1.6.3|
