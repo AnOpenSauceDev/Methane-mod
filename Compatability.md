@@ -32,4 +32,4 @@ Mod missing? Suggest it to be tested in a pull request.
 |Cloth Config|✔|1.6.3|
 |Distant Horizions*|⚠|1.6.3
 
-> * Distant horizons currently is broken with methane OFF.
+> * Distant horizons currently is broken with methane ON.
