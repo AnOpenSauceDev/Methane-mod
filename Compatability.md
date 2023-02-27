@@ -5,7 +5,7 @@ being tested
 
 this is a complete list of tested mods, mainly those i come across while using Methane.
 
-Mod missing? Suggest it in a pull request.
+Mod missing? Suggest it to be tested in a pull request.
 
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
@@ -30,3 +30,6 @@ Mod missing? Suggest it in a pull request.
 |Rolling Health|✔|Early dev build|
 |ReplayMod|✔|1.5|
 |Cloth Config|✔|1.6.3|
+|Distant Horizions*|⚠|1.6.3
+
+> * Distant horizons currently is broken with methane OFF.
