@@ -19,4 +19,6 @@ Methane depends on the following mods:
 - Mod Menu
 
 I'm working on other projects most of the time, so don't expect me to finish things straight away. <br>
-Non-Issues should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions)
+Non-Issues should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
+
+If you **REALLY** want to get your hands on bleeding-edge builds (for whatever reason), github actions probably has it.
