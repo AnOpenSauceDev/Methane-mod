@@ -9,5 +9,6 @@
   "text.autoconfig.methane.option.disablePowderedSnowFog": "Disable Powdered Snow Fog",
   "text.autoconfig.methane.option.disableThickFog": "Disable Nether Fog",
   "text.autoconfig.methane.option.disableSkyFog": "Disable Sky Fog",
-  "text.autoconfig.methane.option.persistFogSettings": "Persist Fog?"
+  "text.autoconfig.methane.option.persistFogSettings": "Persist Fog?",
+  "text.autoconfig.methane.option.modstate": "Start with Methane on? "
 }

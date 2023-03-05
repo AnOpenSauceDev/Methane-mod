@@ -7,6 +7,9 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config(name = "methane")
 public class MethaneSettings implements ConfigData {
     //TODO: we should transition to translatable comments (@Comment(Text.translatable("YOUR.THING.HERE")))
+
+    @Comment("Methane's initial state. (You should set this to true if you use sodium.)")
+    public boolean modstate = true;
     @Comment("Toggle whether to keep fog settings even with Methane disabled.")
     public boolean persistFogSettings = false;
     public boolean disableAirFog = false; // the fog pass that obscures terrain
