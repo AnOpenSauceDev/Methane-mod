@@ -1,5 +1,6 @@
 package me.wolfie.methane.client;
 
+import me.wolfie.methane.Methane;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -9,6 +10,7 @@ import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
 import static me.wolfie.methane.Methane.ModActive;
+import static me.wolfie.methane.Methane.settings;
 
 public class MethaneClient implements ClientModInitializer {
 
@@ -16,6 +18,8 @@ public class MethaneClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        Methane.ModActive = settings.modstate;
 
         // this causes us to need the Fabric API.
         MethaneToggle = KeyBindingHelper.registerKeyBinding(new KeyBinding(
