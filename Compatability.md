@@ -9,10 +9,10 @@ Mod missing? Suggest it to be tested in a pull request.
 
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
-|Starlight|⚠|None|
+|Starlight|**|None|
 |Sodium|✔|1.6.3|
 |Vivecraft (VR+NONVR)|✔|1.5|
-|Iris Shaders|🔧|1.5|
+|Iris Shaders|⚠***|1.5|
 |Exordium|✔|1.5|
 |DashLoader|✔|1.4.6|
 |Lithium|✔|1.5|
@@ -32,4 +32,8 @@ Mod missing? Suggest it to be tested in a pull request.
 |Cloth Config|✔|1.6.3|
 |Distant Horizions*|⚠|1.6.3
 
-> * Distant horizons currently is broken with methane ON.
+> * * Distant horizons currently is broken with methane ON. <br>
+
+> * ** Starlight wont _crash_ with methane, but i havent actually done any checks yet <br>
+
+> * *** Iris shaders _kind of works_ with some shaders. See my rationale and notes [here](https://github.com/AnOpenSauceDev/Methane-mod/issues/30) <br>
