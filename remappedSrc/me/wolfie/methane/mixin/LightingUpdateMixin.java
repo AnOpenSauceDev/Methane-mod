@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.BitSet;
 import java.util.Iterator;
 
-@Mixin(ClientPlayNetworkHandler.class)
+@Mixin(ClientPlayPacketListener.class)
 public abstract class LightingUpdateMixin implements PacketListener {
 
     @Inject(method = "readLightData", at = @At("HEAD"), cancellable = true)

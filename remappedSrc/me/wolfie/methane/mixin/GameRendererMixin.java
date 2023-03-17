@@ -2,8 +2,6 @@ package me.wolfie.methane.mixin;
 
 import me.wolfie.methane.Methane;
 
-import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.world.chunk.light.LightingProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
