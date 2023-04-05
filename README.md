@@ -1,7 +1,7 @@
 [modrinth](https://modrinth.com/mod/methane)
 
 # Methane
-A performance mod.
+A Fabric/Quilt performance mod.
 
 ### Mod compat
 [available here.](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/Compatability.md)
