@@ -32,7 +32,7 @@ Mod missing? Suggest it to be tested in a pull request.
 |Cloth Config|✔|1.6.3|
 |Distant Horizions*|⚠|1.6.3
 
-> * * Distant horizons currently is broken with methane ON. <br>
+> * * ~~Distant horizons currently is broken with methane ON.~~ UPDATE: A temporary workaround [can be found here](https://github.com/AnOpenSauceDev/Methane-mod/issues/25#issuecomment-1500877766) <br>
 
 > * ** Starlight wont _crash_ with methane, but i havent actually done any checks yet <br>
 
