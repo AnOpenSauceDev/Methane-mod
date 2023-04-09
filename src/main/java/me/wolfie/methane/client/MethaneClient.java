@@ -33,14 +33,21 @@ public class MethaneClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (MethaneToggle.wasPressed()){
-                ModActive = !ModActive;
-                if(ModActive) {
-                    client.player.sendMessage(Text.translatable("methane.active"));
-                    HudRenderListener.ShowTicks = (5 * 20); // 5 seconds, in ticks
-                }else {
-                    client.player.sendMessage(Text.translatable("methane.offline"));
-                    HudRenderListener.ShowTicks = (5 * 20);
-                }
+                    ModActive = !ModActive;
+                    HudRenderListener.ShowTicks = (15 * 20);
+                    if(!settings.hudrender){
+
+                        if(ModActive)
+                        {
+
+                            client.player.sendMessage(Text.translatable("methane.active"));
+
+                        }else
+                        {
+                            client.player.sendMessage(Text.translatable("methane.offline"));
+                        }
+
+                    }
             }
         });
 

@@ -23,4 +23,7 @@ public class MethaneSettings implements ConfigData {
 
     @Comment("The default world brightness value (15 default and effective max)")
     public int brightness = 15;
+
+    @Comment("Render the status messages on the HUD instead of chat?")
+    public boolean hudrender = true;
 }
