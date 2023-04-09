@@ -31,6 +31,7 @@ Mod missing? Suggest it to be tested in a pull request.
 |ReplayMod|✔|1.5|
 |Cloth Config|✔|1.6.3|
 |Distant Horizions*|⚠|1.6.3
+|VulkanMod*|✔|1.7
 
 > * * ~~Distant horizons currently is broken with methane ON.~~ UPDATE: A temporary workaround [can be found here](https://github.com/AnOpenSauceDev/Methane-mod/issues/25#issuecomment-1500877766) <br>
 
