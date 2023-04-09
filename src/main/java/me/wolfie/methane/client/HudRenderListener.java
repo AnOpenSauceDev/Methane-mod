@@ -12,7 +12,7 @@ public class HudRenderListener implements HudRenderCallback {
 
 
 
-    // possible idea: allow positional overrides. (i believe that a config option is a bit un-intuitive)
+    // possible idea: allow positional overrides. (I believe that a config option is a bit un-intuitive)
     @Override
     public void onHudRender(MatrixStack matrixStack, float v) {
         if(Methane.settings.hudrender){
