@@ -11,6 +11,6 @@
   "text.autoconfig.methane.option.disableSkyFog": "Disable Sky Fog",
   "text.autoconfig.methane.option.persistFogSettings": "Persist Fog?",
   "text.autoconfig.methane.option.modstate": "Start with Methane on? ",
-  "text.autoconfig.methane.option.brightness": "Default terrain brightness: ",
+  "text.autoconfig.methane.option.brightness": "(experimental) Default terrain brightness: ",
   "text.autoconfig.methane.option.hudrender": "Render Status on HUD? "
 }
