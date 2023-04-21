@@ -4,7 +4,7 @@
   "version": "1.7",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and/or fog",
-  "authors": ["AnOpenSauceDev"],
+  "authors": ["AnOpenSauceDev","Cyclopropinon"],
   "contact": {
     "issues": "https://github.com/AnOpenSauceDev/Methane-mod/issues"
   },
@@ -31,6 +31,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.0",
-    "minecraft": "1.19.x"
+    "minecraft": "*"
   }
 }
