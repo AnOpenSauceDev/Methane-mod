@@ -34,7 +34,6 @@ public class MethaneClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (MethaneToggle.wasPressed()){
                     ModActive = !ModActive;
-                    HudRenderListener.ShowTicks = (15 * 20);
                     if(!settings.hudrender){
 
                         if(ModActive)

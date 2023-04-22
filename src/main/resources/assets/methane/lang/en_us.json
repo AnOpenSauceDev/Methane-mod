@@ -12,5 +12,5 @@
   "text.autoconfig.methane.option.persistFogSettings": "Persist Fog?",
   "text.autoconfig.methane.option.modstate": "Start with Methane on? ",
   "text.autoconfig.methane.option.brightness": "(experimental) Default terrain brightness: ",
-  "text.autoconfig.methane.option.hudrender": "Render Status on HUD? "
+  "text.autoconfig.methane.option.hudrender": "(removed in branch) Render Status on HUD? "
 }
