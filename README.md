@@ -7,7 +7,7 @@ A Fabric/Quilt performance mod.
 [available here.](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/Compatability.md)
 
 ### for other programmers
-~~The code here is a pretty big mess of mixins (initally made in a couple days).~~ **the project is way less messy now than it origionally was, but it's still a bit complicated for beginner programmers.** <br>
+~~The code here is a pretty big mess of mixins (initally made in a couple days).~~ **the project is way less messy now than it originally was, but it's still a bit complicated for beginner programmers.** <br>
 If you want to learn anything about modding (mainly on the HUD side), i would suggest looking the source code of [my other mods.](https://github.com/stars/AnOpenSauceDev/lists/my-mods) <br>
 for those who want to _~~suffer~~_ try out new things, have a look at the unstable [methane-next](https://github.com/AnOpenSauceDev/Methane-mod/tree/methane-next)
 
