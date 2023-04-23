@@ -22,3 +22,5 @@ I'm working on other projects most of the time, so don't expect me to finish thi
 Non-Issues should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
 
 If you **REALLY** want to get your hands on bleeding-edge builds (for whatever reason), github actions probably has it.
+
+> please do not re-upload my mods to other platforms without my permission. The only places this mod is available is on Modrinth and Github. 
