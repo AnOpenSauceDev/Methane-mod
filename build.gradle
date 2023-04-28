@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
 
-    modApi "com.terraformersmc:modmenu:6.1.0-rc.4"
+    modApi "com.terraformersmc:modmenu:6.2.1"
     modApi( "me.shedaniel.cloth:cloth-config-fabric:10.0.96")
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"

@@ -2,7 +2,6 @@ package me.wolfie.methane.mixin;
 
 import me.wolfie.methane.Methane;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
-import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.listener.PacketListener;
 import net.minecraft.network.packet.s2c.play.LightData;
 import net.minecraft.network.packet.s2c.play.LightUpdateS2CPacket;
@@ -27,7 +26,7 @@ public abstract class LightingUpdateMixin implements PacketListener {
     }
 
     @Inject(method = "updateLighting", at = @At("HEAD"), cancellable = true)
-    private void updateLighting(int chunkX, int chunkZ, LightingProvider provider, LightType type, BitSet inited, BitSet uninited, Iterator<byte[]> nibbles, boolean nonEdge, CallbackInfo ci) {
+    private void updateLighting(int chunkX, int chunkZ, LightingProvider provider, LightType type, BitSet inited, BitSet uninited, Iterator<byte[]> nibbles, CallbackInfo ci) {
         if (Methane.ModActive) ci.cancel();
     }
 
@@ -47,7 +46,7 @@ public abstract class LightingUpdateMixin implements PacketListener {
                 instance.getWorld().scheduleBlockRenders(x, j, z);
             }
 
-            instance.getWorld().markChunkRenderability(x, z);
+            //instance.getWorld().markChunkRenderability(x, z);
             ci.cancel();
         }
     }
