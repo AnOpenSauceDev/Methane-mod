@@ -1,0 +1,15 @@
+{
+  "methane.active": "Methane 打开了， 请重新进入世界。",
+  "methane.offline": "Methane 关了， 请重新进入世界。",
+  "key.methane.toggle": "Methane 开关",
+  "category.methane.keys": "Methane 密钥绑定",
+  "text.autoconfig.methane.option.disableAirFog": "不画空气的雾",
+  "text.autoconfig.methane.option.disableWaterFog": "不画水雾",
+  "text.autoconfig.methane.option.disableLavaFog": "不画熔岩的雾",
+  "text.autoconfig.methane.option.disablePowderedSnowFog": "不画雪雾",
+  "text.autoconfig.methane.option.disableThickFog": "不画Nether的雾",
+  "text.autoconfig.methane.option.disableSkyFog": "不画天雾",
+  "text.autoconfig.methane.option.persistFogSettings": "坚持雾?",
+  "text.autoconfig.methane.option.modstate": "自动开Methane?",
+  "text.autoconfig.methane.option.brightness": "(新的) 一般亮度:"
+}
