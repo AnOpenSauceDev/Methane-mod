@@ -1,0 +1,16 @@
+{
+  "methane.active": "Methane isd agdiviad. Stard a mol Minecraft nai um da Ändrunga za seng.",
+  "methane.offline": "Methane isd ned agdiviad. Geh nummol in den Server, um da Ändrunga za seng.",
+  "key.methane.toggle": "Methane An/Aus",
+  "category.methane.keys": "Methane",
+  "text.autoconfig.methane.option.disableAirFog": "Endfern ma den Nebl in da Luft",
+  "text.autoconfig.methane.option.disableWaterFog": "Endfern ma den Nebl im Wossa",
+  "text.autoconfig.methane.option.disableLavaFog": "Endfern ma den Nebl in da Lava",
+  "text.autoconfig.methane.option.disablePowderedSnowFog": "Endfern ma den Nebl im Bulvaschnee",
+  "text.autoconfig.methane.option.disableThickFog": "Endfern ma den Nebl im Nether",
+  "text.autoconfig.methane.option.disableSkyFog": "Endfern ma den Nebl im Himml",
+  "text.autoconfig.methane.option.persistFogSettings": "Behald die Nebländrunga beim deagdivian vo Methane?",
+  "text.autoconfig.methane.option.modstate": "Methane beim Stardn agdivian?",
+  "text.autoconfig.methane.option.brightness": "(egsberimendell) Ursprünglicha Umgebungshellichgeid:",
+  "text.autoconfig.methane.option.hudrender": "(im branch entfeand) Stadus aufm HUD ozeign lassan?"
+}
