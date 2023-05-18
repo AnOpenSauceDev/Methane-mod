@@ -1,0 +1,17 @@
+{
+    "methane.active": "Methane ativado, por favor, junte-se novamente ao seu mundo para que isso entre em vigor",
+    "methane.offline": "Methane desabilitado, retorne ao seu mundo para que isso entre em vigor",
+    "key.methane.toggle": "Alternar Methane",
+    "category.methane.keys": "Methane Teclas de atalho",
+    "text.autoconfig.methane.option.disableAirFog": "Desativar Fog no Horizonte",
+    "text.autoconfig.methane.option.disableWaterFog": "Desativar Fog Subaquática",
+    "text.autoconfig.methane.option.disableLavaFog": "Desativar Lava Fog",
+    "text.autoconfig.methane.option.disablePowderedSnowFog": "Desativar Névoa de Neve Fofa",
+    "text.autoconfig.methane.option.disableThickFog": "Desativar Nether Fog",
+    "text.autoconfig.methane.option.disableSkyFog": "Desativar Fog do Céu",
+    "text.autoconfig.methane.option.persistFogSettings": "Fog Persistente?",
+    "text.autoconfig.methane.option.modstate": "Comece com Methane Ligado? ",
+    "text.autoconfig.methane.option.brightness": "(experimental) Brilho Padrão do Terreno: ",
+    "text.autoconfig.methane.option.hudrender": "Status de Eenderização no HUD? "
+}
+  
