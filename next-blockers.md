@@ -3,6 +3,6 @@
 - [x] get toggling to work <br>
 - [ ] Somehow discard chunks without causing headaches or kicking the player out <br>
 - [x] fix sodium compatability <br>
-- [ ] translations for other languages
+- [x] translations for other languages
 - [ ] LOLCAT
-- [ ] test everything again. <br>
+- [x] test everything again. <br>
