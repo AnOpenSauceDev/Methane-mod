@@ -8,7 +8,8 @@
   "client": [
     "BackgroundMixin",
     "GameRendererMixin",
-    "LightingUpdateMixin"
+    "LightingUpdateMixin",
+    "LightProviderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
