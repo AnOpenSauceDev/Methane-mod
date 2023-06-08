@@ -1,6 +1,5 @@
 [modrinth](https://modrinth.com/mod/methane)
 
-> ⚠ the majority of development is on hold until 1.20 releases, which is on _June 7th._ Until then, builds will be published onto the actions tab
 
 # Methane
 A Fabric/Quilt performance mod.
