@@ -1,7 +1,6 @@
 package me.wolfie.methane.mixin;
 
 import me.wolfie.methane.Methane;
-import me.wolfie.methane.MethaneSettings;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.light.LightingProvider;
 import org.spongepowered.asm.mixin.Mixin;
