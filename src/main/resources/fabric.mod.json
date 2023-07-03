@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "1.7",
+  "version": "2.0",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and/or fog",
   "authors": ["AnOpenSauceDev"],
@@ -13,17 +13,16 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.wolfie.methane.Methane"
+      "com.modrinth.methane.Methane"
     ],
     "client": [
-
-      "me.wolfie.methane.client.MethaneClient"
+      "com.modrinth.methane.client.MethaneClient"
     ],
     "server": [
-      "me.wolfie.methane.server.MethaneServerError"
+      "com.modrinth.methane.server.MethaneServerError"
     ],
     "modmenu": [
-      "me.wolfie.methane.ModMenuIntegration"
+      "com.modrinth.methane.ModMenuIntegration"
     ]
   },
   "mixins": [

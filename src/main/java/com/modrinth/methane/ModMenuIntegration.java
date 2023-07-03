@@ -1,4 +1,4 @@
-package me.wolfie.methane;
+package com.modrinth.methane;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

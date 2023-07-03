@@ -1,6 +1,6 @@
-package me.wolfie.methane.client;
+package com.modrinth.methane.client;
 
-import me.wolfie.methane.Methane;
+import com.modrinth.methane.Methane;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;

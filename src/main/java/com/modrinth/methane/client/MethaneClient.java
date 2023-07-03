@@ -1,6 +1,6 @@
-package me.wolfie.methane.client;
+package com.modrinth.methane.client;
 
-import me.wolfie.methane.Methane;
+import com.modrinth.methane.Methane;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -9,9 +9,6 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
-import static me.wolfie.methane.Methane.ModActive;
-import static me.wolfie.methane.Methane.settings;
-
 public class MethaneClient implements ClientModInitializer {
 
     public KeyBinding MethaneToggle;
@@ -19,7 +16,7 @@ public class MethaneClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        Methane.ModActive = settings.modstate;
+        Methane.ModActive = Methane.settings.modstate;
 
         // this causes us to need the Fabric API.
         MethaneToggle = KeyBindingHelper.registerKeyBinding(new KeyBinding(
@@ -33,11 +30,11 @@ public class MethaneClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (MethaneToggle.wasPressed()){
-                    ModActive = !ModActive;
+                    Methane.ModActive = !Methane.ModActive;
                     HudRenderListener.ShowTicks = (15 * 20);
-                    if(!settings.hudrender){
+                    if(!Methane.settings.hudrender){
 
-                        if(ModActive)
+                        if(Methane.ModActive)
                         {
 
                             client.player.sendMessage(Text.translatable("methane.active"));

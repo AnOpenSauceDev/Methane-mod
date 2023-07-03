@@ -1,7 +1,7 @@
-package me.wolfie.methane.mixin;
+package com.modrinth.methane.mixin;
 
+import com.modrinth.methane.Methane;
 import com.mojang.blaze3d.systems.RenderSystem;
-import me.wolfie.methane.Methane;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
 import net.minecraft.entity.Entity;

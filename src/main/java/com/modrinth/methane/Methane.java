@@ -1,8 +1,8 @@
-package me.wolfie.methane;
+package com.modrinth.methane;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import me.wolfie.methane.client.HudRenderListener;
+import com.modrinth.methane.client.HudRenderListener;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import org.slf4j.Logger;

@@ -1,6 +1,6 @@
-package me.wolfie.methane.server;
+package com.modrinth.methane.server;
 
-import me.wolfie.methane.Methane;
+import com.modrinth.methane.Methane;
 import net.fabricmc.api.DedicatedServerModInitializer;
 
 public class MethaneServerError implements DedicatedServerModInitializer {
