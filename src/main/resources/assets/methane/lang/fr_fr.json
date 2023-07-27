@@ -1,0 +1,16 @@
+{
+  "methane.active": "Methane activé, veuillez rejoindre votre monde pour qu'il puisse prendre effet",
+  "methane.offline": "Methane désactivé, veuillez rejoindre votre monde pour qu'il puisse prendre effet complètement",
+  "key.methane.toggle": "Activer/désactiver Methane",
+  "category.methane.keys": "Contrôles de Methane",
+  "text.autoconfig.methane.option.disableAirFog": "Désactiver le brouillard",
+  "text.autoconfig.methane.option.disableWaterFog": "Désactiver le brouillard sous l'eau",
+  "text.autoconfig.methane.option.disableLavaFog": "Désactiver le brouillard sous la lave",
+  "text.autoconfig.methane.option.disablePowderedSnowFog": "Désactiver le brouillard dans la neige poudreuse",
+  "text.autoconfig.methane.option.disableThickFog": "Désactiver le brouillard dans le Nether",
+  "text.autoconfig.methane.option.disableSkyFog": "Désactiver le brouillard aérien",
+  "text.autoconfig.methane.option.persistFogSettings": "Brouillard persistant ?",
+  "text.autoconfig.methane.option.modstate": "Démarrer avec Methane activé ? ",
+  "text.autoconfig.methane.option.brightness": "(expérimental) Luminosité par défaut du terrain: ",
+  "text.autoconfig.methane.option.hudrender": "Status du rendu sur l'HUD? "
+}
