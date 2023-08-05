@@ -1,4 +1,4 @@
-[modrinth](https://modrinth.com/mod/methane)
+[modrinth](https://modrinth.com/mod/methane) | curseforge (unsupported)
 
 
 # Methane
@@ -25,4 +25,6 @@ Non-Issues should be handled in [Discussions.](https://github.com/AnOpenSauceDev
 
 If you **REALLY** want to get your hands on bleeding-edge builds (for whatever reason), github actions always has builds of the latest commits.
 
-> please do not re-upload my mods to other platforms without my permission. The only places this mod is available is on Modrinth and Github. 
+> please do not re-upload my mods to other platforms without my permission. The only places this mod is available is on Modrinth and Github. <br>
+
+> Methane is on curseforge to prevent impersonation, no support will be given.
