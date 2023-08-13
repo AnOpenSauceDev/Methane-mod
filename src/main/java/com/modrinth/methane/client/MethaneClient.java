@@ -25,7 +25,7 @@ public class MethaneClient implements ClientModInitializer {
         MethaneToggle = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                         "key.methane.toggle",
                         InputUtil.Type.KEYSYM,
-                        GLFW.GLFW_KEY_BACKSLASH,
+                        GLFW.GLFW_KEY_UNKNOWN,
                         "category.methane.keys"
                 )
         );

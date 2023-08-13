@@ -1,6 +1,7 @@
 package com.modrinth.methane.client;
 
 import com.modrinth.methane.Methane;
+import com.modrinth.methane.MethaneSettings;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -16,6 +17,7 @@ public class HudRenderListener implements HudRenderCallback {
     // possible idea: allow positional overrides. (I believe that a config option is a bit un-intuitive)
     @Override
     public void onHudRender(DrawContext drawContext, float v) {
+
         if(Methane.settings.hudrender){
             TextRenderer renderer = MinecraftClient.getInstance().textRenderer;
 

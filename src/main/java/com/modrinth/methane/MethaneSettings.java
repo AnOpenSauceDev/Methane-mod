@@ -21,11 +21,11 @@ public class MethaneSettings implements ConfigData {
     @Comment("The fog that covers terrain in")
     public boolean disableSkyFog = false; // I think this is another fog pass
 
-    /*
-    @Comment("The default world brightness value (15 default and effective max)")
-    public int brightness = 15;
 
-     */
+    @Comment("The default world brightness value (15 default and effective max)")
+    public double brightness = 1000;
+
+
 
     @Comment("Render the status messages on the HUD instead of chat?")
     public boolean hudrender = true;
