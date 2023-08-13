@@ -23,7 +23,7 @@ public class MethaneSettings implements ConfigData {
 
 
     @Comment("The default world brightness value (15 default and effective max)")
-    public double brightness = 1000;
+    public double brightness = 1000; // unused for now because of a ton of issues
 
 
 
