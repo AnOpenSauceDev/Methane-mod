@@ -1,4 +1,4 @@
-[modrinth](https://modrinth.com/mod/methane) | curseforge (unsupported)
+[<img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg">](https://modrinth.com/mod/methane)  &nbsp;&nbsp;&nbsp; [<img alt="curseforge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg">](https://legacy.curseforge.com/minecraft/mc-mods/methane)
 
 
 # Methane
@@ -21,7 +21,7 @@ Enjoy Methane? **Leave a ⭐** (it gives me dopamine)
 > - Mod Menu
 
 I'm working on other projects most of the time, so don't expect me to finish things straight away. <br>
-Non-Issues should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
+Any questions you have should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
 
 If you **REALLY** want to get your hands on bleeding-edge builds (for whatever reason), github actions always has builds of the latest commits.
 
