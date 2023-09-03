@@ -1,12 +1,22 @@
 package com.modrinth.methane;
 
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
-@Config(name = "methane")
-public class MethaneSettings implements ConfigData {
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
+
+public class MethaneSettings {
     //TODO: we should transition to translatable comments (@Comment(Text.translatable("YOUR.THING.HERE")))
+
+    public static ConfigClassHandler<MethaneSettings> HANDLER = ConfigClassHandler.createBuilder(MethaneSettings.class)
+            .id(new Identifier("mymod", "my_config"))
+            .serializer(config -> GsonConfigSerializerBuilder.create(config)
+                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("my_mod.json5"))
+                    .appendGsonBuilder(GsonBuilder::setPrettyPrint) // not needed, pretty print by default
+                    .setJson5(true)
+                    .build())
+            .build();
+
+
 
     @Comment("Methane's initial state. (You should set this to 'Yes' if you use sodium.)")
     public boolean modstate = true;
