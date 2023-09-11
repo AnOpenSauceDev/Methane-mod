@@ -3,13 +3,13 @@
 Key: ✔ = works, ❌ = broken, ⚠ = incompatabilities/server only, 🔧 = workaround(s) implemented in code, 🚧 = currently
 being tested
 
-this is a complete list of tested mods, mainly those i come across while using Methane. Most mods, tested on older versions should work fine on 2.2
+this is a complete list of tested mods, mainly those i come across while using Methane. Most mods tested on older versions should work fine on 2.1.
 
 Mod missing? Suggest it to be tested in a pull request.
 
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
-|ModernFix|✔|2.2|
+|ModernFix|✔|2.1|
 |Faster Random|✔|2.1|
 |FastAnim|✔|2.1|
 |Starlight|**|None|
