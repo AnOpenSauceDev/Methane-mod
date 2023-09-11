@@ -3,12 +3,13 @@
 Key: ✔ = works, ❌ = broken, ⚠ = incompatabilities/server only, 🔧 = workaround(s) implemented in code, 🚧 = currently
 being tested
 
-this is a complete list of tested mods, mainly those i come across while using Methane.
+this is a complete list of tested mods, mainly those i come across while using Methane. Most mods, tested on older versions should work fine on 2.2
 
 Mod missing? Suggest it to be tested in a pull request.
 
 | Name | Compat | Tested Version |
 |------|:------:|--------:|
+|ModernFix|✔|2.2|
 |Faster Random|✔|2.1|
 |FastAnim|✔|2.1|
 |Starlight|**|None|
@@ -28,7 +29,7 @@ Mod missing? Suggest it to be tested in a pull request.
 |Krypton|✔|1.5|
 |Architectury|✔|1.5|
 |Camera Utils|✔|1.5|
-|Mod Menu|✔|2.1|
+|Mod Menu|✔|2.2|
 |Rolling Health|✔|Early dev build|
 |ReplayMod|✔|1.5|
 |Cloth Config|✔|1.6.3|
