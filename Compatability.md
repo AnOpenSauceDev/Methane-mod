@@ -36,8 +36,8 @@ Mod missing? Suggest it to be tested in a pull request.
 |Distant Horizions*|⚠|1.6.3
 |VulkanMod*|✔|1.7
 
-> * * ~~Distant horizons currently is broken with methane ON.~~ UPDATE: A temporary workaround [can be found here](https://github.com/AnOpenSauceDev/Methane-mod/issues/25#issuecomment-1500877766) <br>
+> * * ~~Distant horizons currently is broken with methane ON.~~ UPDATE: A temporary workaround [can be found here.](https://github.com/AnOpenSauceDev/Methane-mod/issues/25#issuecomment-1500877766) <br>
 
-> * ** Starlight wont _crash_ with methane, but i haven't actually done any checks yet <br>
+> * ** Starlight wont _crash_ with methane, but i haven't actually done any deeper research yet. <br>
 
-> * *** Iris shaders _kind of works_ with some shaders. See my rationale and notes [here](https://github.com/AnOpenSauceDev/Methane-mod/issues/30) <br>
+> * *** Iris shaders works fine with some shaders. See more info [here.](https://github.com/AnOpenSauceDev/Methane-mod/issues/30) <br>
