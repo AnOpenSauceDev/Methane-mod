@@ -8,6 +8,8 @@ import com.modrinth.methane.client.HudRenderListener;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -26,6 +28,8 @@ public class Methane implements ModInitializer {
 
     public static final Identifier METHANE_STATE_PACKET = new Identifier("methane_server","statepacket");
 
+    public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
+
     @Override
     public void onInitialize() {
         MethaneLogger.info("Methane has loaded!");
@@ -35,6 +39,7 @@ public class Methane implements ModInitializer {
         HudRenderCallback.EVENT.register(new HudRenderListener());
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET,((client, handler, buf, responseSender) -> {
+            ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
             MethaneLogger.info("recived packet from server");
             int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
             if(intToBoolConversion(data[0])){

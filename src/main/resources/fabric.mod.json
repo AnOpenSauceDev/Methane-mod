@@ -29,6 +29,7 @@
     "methane.mixins.json"
   ],
   "depends": {
+    "cloth-config": "*",
     "fabricloader": ">=0.14.0",
     "minecraft": "*"
   }
