@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "2.2",
+  "version": "2.1",
   "name": "Methane",
   "description": "Gain performance by destroying lighting and/or fog",
   "authors": ["AnOpenSauceDev"],
@@ -20,6 +20,9 @@
     ],
     "server": [
       "com.modrinth.methane.server.MethaneServerError"
+    ],
+    "modmenu": [
+      "com.modrinth.methane.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -27,7 +30,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.0",
-    "yet_another_config_lib_v3": "*",
     "minecraft": "*"
   }
 }

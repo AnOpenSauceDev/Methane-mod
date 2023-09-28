@@ -37,6 +37,6 @@ Mod missing? Suggest it to be tested in a pull request.
 
 > * * ~~Distant horizons currently is broken with methane ON.~~ UPDATE: A temporary workaround [can be found here](https://github.com/AnOpenSauceDev/Methane-mod/issues/25#issuecomment-1500877766) <br>
 
-> * ** Starlight won't _crash_ with methane, but I haven't actually done any checks yet <br>
+> * ** Starlight wont _crash_ with methane, but i haven't actually done any checks yet <br>
 
 > * *** Iris shaders _kind of works_ with some shaders. See my rationale and notes [here](https://github.com/AnOpenSauceDev/Methane-mod/issues/30) <br>
