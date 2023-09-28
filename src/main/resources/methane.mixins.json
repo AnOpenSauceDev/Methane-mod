@@ -4,6 +4,7 @@
   "package": "com.modrinth.methane.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "RandomOptimization"
   ],
   "client": [
     "BackgroundMixin",
