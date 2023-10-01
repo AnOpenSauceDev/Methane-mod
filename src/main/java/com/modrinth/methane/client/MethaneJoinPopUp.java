@@ -46,14 +46,14 @@ public class MethaneJoinPopUp extends Screen {
                     close();
                 })
                 .dimensions(width / 2 - 205, 20, 200, 20)
-                .tooltip(Tooltip.of(Text.literal("Accept server config.")))
+                .tooltip(Tooltip.of(Text.literal("methane.accept")))
                 .build();
         no = ButtonWidget.builder(Text.literal("No"), button -> {
                     ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 + 5, 20, 200, 20)
-                .tooltip(Tooltip.of(Text.literal("Reject server config.")))
+                .tooltip(Tooltip.of(Text.translatable("methane.reject")))
                 .build();
 
         addDrawableChild(yes);
