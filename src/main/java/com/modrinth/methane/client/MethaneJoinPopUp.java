@@ -40,15 +40,15 @@ public class MethaneJoinPopUp extends Screen {
 
     @Override
     protected void init() {
-        yes = ButtonWidget.builder(Text.literal("Yes"), button -> {
+        yes = ButtonWidget.builder(Text.translatable("methane.yes"), button -> {
                     MethaneClient.ToggleMethaneSetBool(client,statedata);
                     ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 - 205, 20, 200, 20)
-                .tooltip(Tooltip.of(Text.literal("methane.accept")))
+                .tooltip(Tooltip.of(Text.translatable("methane.accept")))
                 .build();
-        no = ButtonWidget.builder(Text.literal("No"), button -> {
+        no = ButtonWidget.builder(Text.translatable("methane.no"), button -> {
                     ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
                     close();
                 })
