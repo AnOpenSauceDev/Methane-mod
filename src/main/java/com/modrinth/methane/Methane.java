@@ -30,6 +30,8 @@ public class Methane implements ModInitializer {
 
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
+    public static boolean ServerForbidsChanging = false;
+
     @Override
     public void onInitialize() {
         MethaneLogger.info("Methane has loaded!");
@@ -45,7 +47,9 @@ public class Methane implements ModInitializer {
             if(intToBoolConversion(data[0])){
             MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
             MethaneLogger.info("forcing methane config");
+            ServerForbidsChanging = true;
             }else {
+                // if the server allows changes
                 MethaneLogger.info("Methane settings prompt open");
                 setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
             }

@@ -38,12 +38,13 @@ public class MethaneJoinPopUp extends Screen {
     protected void init() {
         yes = ButtonWidget.builder(Text.literal("Yes"), button -> {
                     MethaneClient.ToggleMethaneSetBool(client,statedata);
+                    close();
                 })
                 .dimensions(width / 2 - 205, 20, 200, 20)
                 .tooltip(Tooltip.of(Text.literal("Accept server config.")))
                 .build();
         no = ButtonWidget.builder(Text.literal("No"), button -> {
-
+                    close();
                 })
                 .dimensions(width / 2 + 5, 20, 200, 20)
                 .tooltip(Tooltip.of(Text.literal("Reject server config.")))

@@ -30,8 +30,14 @@ public class MethaneClient implements ClientModInitializer {
 
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+
+            if(client.player == null){ // I'm assuming that ClientPlayerEntity is only ever null if you quit the server.
+                Methane.ServerForbidsChanging = false;
+            }
+
             while (MethaneToggle.wasPressed()){
-                    ToggleMethane(client);
+
+                    ToggleMethane(client,false);
 
             }
         });
@@ -40,7 +46,9 @@ public class MethaneClient implements ClientModInitializer {
 
     }
 
-    public static void ToggleMethane(MinecraftClient client) {
+    public static void ToggleMethane(MinecraftClient client,boolean force) {
+        if(!Methane.ServerForbidsChanging || force){
+
         Methane.ModActive = !Methane.ModActive;
         HudRenderListener.ShowTicks = (15 * 20);
         if(!Methane.settings.hudrender){
@@ -55,6 +63,7 @@ public class MethaneClient implements ClientModInitializer {
                 client.player.sendMessage(Text.translatable("methane.offline"));
             }
 
+        }
         }
     }
 
