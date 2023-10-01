@@ -15,8 +15,8 @@ public abstract class LightingUpdateMixin implements PacketListener {
     private boolean dirty;
 
     /**
-     * @author
-     * @reason
+     * @author AnOpenSauceDev
+     * @reason force light to not tick.
      */
     @Overwrite
     public void tick(){
@@ -30,7 +30,7 @@ public abstract class LightingUpdateMixin implements PacketListener {
             this.flickerIntensity += (float)((Math.random() - Math.random()) * Math.random() * Math.random() * 0.1);
             this.flickerIntensity *= 0.9f;
             this.dirty = true;
-        } // fastmath *should work* here
+        }
 
     }
 
