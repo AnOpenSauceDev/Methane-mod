@@ -30,6 +30,8 @@ public class Methane implements ModInitializer {
 
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
+    public static boolean playerBlockingPacket; // whether the player was blocked due to a race condition
+
     public static boolean ServerForbidsChanging = false;
 
     @Override
@@ -47,8 +49,9 @@ public class Methane implements ModInitializer {
             if(intToBoolConversion(data[0])){
             MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
             MethaneLogger.info("forcing methane config");
-                ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
+
             ServerForbidsChanging = true;
+            playerBlockingPacket = true;
             }else {
                 // if the server allows changes
                 MethaneLogger.info("Methane settings prompt open");

@@ -4,15 +4,22 @@ import com.modrinth.methane.Methane;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class MethaneClient implements ClientModInitializer {
 
     public KeyBinding MethaneToggle;
+
+    public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
+
+
 
     @Override
     public void onInitializeClient() {
@@ -31,9 +38,17 @@ public class MethaneClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
+
+
             if(client.player == null){ // I'm assuming that ClientPlayerEntity is only ever null if you quit the server.
                 Methane.ServerForbidsChanging = false;
+            }else if(Methane.playerBlockingPacket){ // I wanted to avoid this at all costs, but it looks like I have to do this hack.
+
+                    Methane.playerBlockingPacket = false;
+                    ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
+
             }
+
 
             while (MethaneToggle.wasPressed()){
 
@@ -68,6 +83,9 @@ public class MethaneClient implements ClientModInitializer {
     }
 
     public static void ToggleMethaneSetBool(MinecraftClient client,boolean state) {
+
+
+
         Methane.ModActive = state;
         HudRenderListener.ShowTicks = (15 * 20);
         if(!Methane.settings.hudrender){
