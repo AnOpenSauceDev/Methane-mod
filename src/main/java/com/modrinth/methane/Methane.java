@@ -41,18 +41,20 @@ public class Methane implements ModInitializer {
         HudRenderCallback.EVENT.register(new HudRenderListener());
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET,((client, handler, buf, responseSender) -> {
-            ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
+
             MethaneLogger.info("recived packet from server");
             int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
             if(intToBoolConversion(data[0])){
             MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
             MethaneLogger.info("forcing methane config");
+                ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
             ServerForbidsChanging = true;
             }else {
                 // if the server allows changes
                 MethaneLogger.info("Methane settings prompt open");
                 setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
             }
+
         }));
     }
 

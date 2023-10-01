@@ -1,5 +1,7 @@
 package com.modrinth.methane.client;
 
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.font.MultilineText;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -7,6 +9,8 @@ import net.minecraft.client.gui.tooltip.Tooltip;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
+
+import static com.modrinth.methane.Methane.METHANE_RESP_PACKET;
 
 public class MethaneJoinPopUp extends Screen {
 
@@ -38,12 +42,14 @@ public class MethaneJoinPopUp extends Screen {
     protected void init() {
         yes = ButtonWidget.builder(Text.literal("Yes"), button -> {
                     MethaneClient.ToggleMethaneSetBool(client,statedata);
+                    ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 - 205, 20, 200, 20)
                 .tooltip(Tooltip.of(Text.literal("Accept server config.")))
                 .build();
         no = ButtonWidget.builder(Text.literal("No"), button -> {
+                    ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 + 5, 20, 200, 20)
