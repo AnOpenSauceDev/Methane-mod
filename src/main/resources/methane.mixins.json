@@ -10,6 +10,7 @@
   ],
   "client": [
     "BackgroundMixin",
+    "DestructiveWeatherOptimisation",
     "GameRendererMixin",
     "KillToasts",
     "LightingUpdateMixin",
