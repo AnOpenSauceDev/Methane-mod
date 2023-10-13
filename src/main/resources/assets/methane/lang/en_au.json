@@ -17,5 +17,6 @@
   "methane.accept": "Accept server config.",
   "methane.yes": "Yes",
   "methane.no": "No",
-  "text.autoconfig.methane.option.destructiveweatheroptimizations": "Destructive Weather Optimisations"
+  "text.autoconfig.methane.option.destructiveweatheroptimizations": "Destructive Weather Optimisations",
+  "text.autoconfig.methane.title": "Methane Settings"
 }

@@ -3,7 +3,7 @@
   "id": "methane",
   "version": "2.3",
   "name": "Methane",
-  "description": "Gain performance by destroying lighting and/or fog",
+  "description": "Explosive optimisations for your favourite block game.",
   "authors": ["AnOpenSauceDev"],
   "contact": {
     "issues": "https://github.com/AnOpenSauceDev/Methane-mod/issues"
