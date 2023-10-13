@@ -68,7 +68,7 @@ public abstract class SaneParticles {
             dy = vec3d.y;
             dz = vec3d.z;
         }
-        
+
         */
         if (dx != 0.0 || dy != 0.0 || dz != 0.0) {
             this.setBoundingBox(this.getBoundingBox().offset(dx, dy, dz));
