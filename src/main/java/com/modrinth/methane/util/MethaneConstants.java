@@ -2,6 +2,8 @@ package com.modrinth.methane.util;
 
 import net.minecraft.util.Identifier;
 
+import java.util.Random;
+
 public class MethaneConstants {
 
     public static final String MOD_NAME = "Methane";
@@ -10,4 +12,7 @@ public class MethaneConstants {
 
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
+    public static Random SharedRandom;
+
 }
+
