@@ -15,12 +15,12 @@ public class DestructiveWeatherOptimisation { // Dragons Beware!
 
     @Inject(method = "renderWeather", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getBiome(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/registry/entry/RegistryEntry;"),cancellable = true)
     public void biomeHacks(LightmapTextureManager manager, float tickDelta, double cameraX, double cameraY, double cameraZ, CallbackInfo ci){
-        if(Methane.ModActive) ci.cancel();
+        if(Methane.ModActive && Methane.settings.destructiveweatheroptimizations) ci.cancel();
     }
 
     @Inject(method = "renderWeather", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/biome/Biome;hasPrecipitation()Z"),cancellable = true)
     public void biomeHacksPt2(LightmapTextureManager manager, float tickDelta, double cameraX, double cameraY, double cameraZ, CallbackInfo ci){
-        if(Methane.ModActive) rtrue(); // Before anyone asks me this, the rain splashing is ticked separately, thus causing the weird biome-dependent splashing effects. (which i don't really want to remove, but who knows)
+        if(Methane.ModActive && Methane.settings.destructiveweatheroptimizations) rtrue(); // Before anyone asks me this, the rain splashing is ticked separately, thus causing the weird biome-dependent splashing effects. (which i don't really want to remove, but who knows)
     }
 
     public boolean rtrue(){
