@@ -41,7 +41,7 @@ public class Methane implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        
+
         MethaneLogger.info("Methane has loaded!");
         Debug.Log("Methane is in developer mode. If you are reading this in a non-dev environment, please create an issue.");
 
