@@ -10,7 +10,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
-import static com.modrinth.methane.Methane.METHANE_RESP_PACKET;
+import static com.modrinth.methane.client.MethaneClient.METHANE_RESP_PACKET;
 
 public class MethaneJoinPopUp extends Screen {
 

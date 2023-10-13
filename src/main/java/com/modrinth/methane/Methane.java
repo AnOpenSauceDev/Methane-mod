@@ -16,24 +16,18 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.modrinth.methane.util.MethaneConstants.METHANE_STATE_PACKET;
+import static com.modrinth.methane.util.MethaneConstants.MOD_NAME;
 import static net.minecraft.client.realms.task.LongRunningTask.setScreen;
 
 public class Methane implements ModInitializer {
 
-
-
     public static boolean ModActive = true; // for toggles
-
-    public static String MOD_NAME = "Methane";
 
     public static Logger DebugLogger = LoggerFactory.getLogger("Methane Developer Debugger");
 
     public static Logger MethaneLogger = LoggerFactory.getLogger(MOD_NAME);
     public static MethaneSettings settings;
-
-    public static final Identifier METHANE_STATE_PACKET = new Identifier("methane_server","statepacket");
-
-    public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
     public static boolean playerBlockingPacket; // whether the player was blocked due to a race condition
 
@@ -71,7 +65,7 @@ public class Methane implements ModInitializer {
 
 
 
-    public boolean intToBoolConversion(int i){
+    public static boolean intToBoolConversion(int i){
         return i != 0; // if "i" is not zero, return true
     }
 
