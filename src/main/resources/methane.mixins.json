@@ -11,6 +11,7 @@
   "client": [
     "BackgroundMixin",
     "GameRendererMixin",
+    "KillToasts",
     "LightingUpdateMixin"
   ],
   "injectors": {

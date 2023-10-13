@@ -2,6 +2,7 @@ package com.modrinth.methane;
 
 import com.modrinth.methane.client.MethaneClient;
 import com.modrinth.methane.client.MethaneJoinPopUp;
+import com.modrinth.methane.util.Debug;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import com.modrinth.methane.client.HudRenderListener;
@@ -23,7 +24,11 @@ public class Methane implements ModInitializer {
 
     public static boolean ModActive = true; // for toggles
 
-    public static Logger MethaneLogger = LoggerFactory.getLogger("Methane");
+    public static String MOD_NAME = "Methane";
+
+    public static Logger DebugLogger = LoggerFactory.getLogger("Methane Developer Debugger");
+
+    public static Logger MethaneLogger = LoggerFactory.getLogger(MOD_NAME);
     public static MethaneSettings settings;
 
     public static final Identifier METHANE_STATE_PACKET = new Identifier("methane_server","statepacket");
@@ -36,7 +41,10 @@ public class Methane implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        
         MethaneLogger.info("Methane has loaded!");
+        Debug.Log("Methane is in developer mode. If you are reading this in a non-dev environment, please create an issue.");
+
         AutoConfig.register(MethaneSettings.class, GsonConfigSerializer::new);
         settings = AutoConfig.getConfigHolder(MethaneSettings.class).getConfig();
 
@@ -44,17 +52,17 @@ public class Methane implements ModInitializer {
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET,((client, handler, buf, responseSender) -> {
 
-            MethaneLogger.info("recived packet from server");
+
             int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
             if(intToBoolConversion(data[0])){
             MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
-            MethaneLogger.info("forcing methane config");
+            Debug.Log("forcing methane config");
 
             ServerForbidsChanging = true;
             playerBlockingPacket = true;
             }else {
                 // if the server allows changes
-                MethaneLogger.info("Methane settings prompt open");
+                Debug.Log("Methane settings prompt open");
                 setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
             }
 
