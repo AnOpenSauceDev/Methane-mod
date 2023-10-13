@@ -61,12 +61,15 @@ public abstract class SaneParticles {
         double d = dx;
         double e = dy;
         double f = dz;
+       /*
         if (collidesWithWorld && (dx != 0.0 || dy != 0.0 || dz != 0.0) && dx * dx + dy * dy + dz * dz < MAX_SQUARED_COLLISION_CHECK_DISTANCE && !Methane.settings.destructiveweatheroptimizations) {
             Vec3d vec3d = Entity.adjustMovementForCollisions(null, new Vec3d(dx, dy, dz), this.getBoundingBox(), this.world, List.of());
             dx = vec3d.x;
             dy = vec3d.y;
             dz = vec3d.z;
         }
+        
+        */
         if (dx != 0.0 || dy != 0.0 || dz != 0.0) {
             this.setBoundingBox(this.getBoundingBox().offset(dx, dy, dz));
             this.repositionFromBoundingBox();
