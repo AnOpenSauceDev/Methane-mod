@@ -30,9 +30,8 @@ public class WorldRendererMixin {
     @Inject(method = "renderLayer", at = @At("HEAD"),cancellable = true)
     public void debugDeleteLayers(RenderLayer renderLayer, MatrixStack matrices, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, CallbackInfo ci){
 
+        if(MethaneSettings.destructiveSettings.RenderLayerSkips && renderLayer.toString().contains("tripwire") /*|| renderLayer.toString().contains("cutout")*/) {
             Debug.Log(renderLayer.toString());
-
-        if(MethaneSettings.destructiveSettings.RenderLayerSkips && renderLayer.toString().contains("tripwire") /*|| renderLayer.toString().contains("cutout")*/ || renderLayer.toString().contains("translucent")) {
             Debug.LogWarning("skipped renderlayer + " + renderLayer);
             ci.cancel();
         }

@@ -41,7 +41,7 @@ public class MethaneSettings implements ConfigData {
         @Comment("Forcefully deletes weather.")
         public boolean DestroyWeather;
 
-        @Comment("culls some render layers for a small amount of performance")
+        @Comment("skip string rendering")
         public boolean RenderLayerSkips;
 
     }
