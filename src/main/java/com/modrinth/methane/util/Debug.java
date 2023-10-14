@@ -5,7 +5,7 @@ import net.fabricmc.loader.api.FabricLoader;
 
 public class Debug {
 
-    private static boolean isDev = FabricLoader.getInstance().isDevelopmentEnvironment();
+    public static boolean isDev = FabricLoader.getInstance().isDevelopmentEnvironment();
 
     public static void Log(String x){
         if(isDev)

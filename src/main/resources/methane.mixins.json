@@ -14,7 +14,8 @@
     "GameRendererMixin",
     "KillToasts",
     "LightingUpdateMixin",
-    "SaneParticles"
+    "SaneParticles",
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -2,6 +2,7 @@ package com.modrinth.methane;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
 @Config(name = "methane")
@@ -25,10 +26,25 @@ public class MethaneSettings implements ConfigData {
     public boolean destructiveweatheroptimizations = false;
 
 
+    @ConfigEntry.Gui.CollapsibleObject
+    public static DestructiveSettings destructiveSettings = new DestructiveSettings();
+
+
     //@Comment("The default world brightness value (15 default and effective max)")
     //public double brightness = 1000; // unused for now because of a ton of issues
 
+    public static class DestructiveSettings{
 
+        @Comment("Deletes the sky (NOT the same as sky fog), and gives a small performance boost. Will also remove the sun + moon")
+        public boolean DestroySky;
+
+        @Comment("Forcefully deletes weather.")
+        public boolean DestroyWeather;
+
+        @Comment("culls some render layers for a small amount of performance")
+        public boolean RenderLayerSkips;
+
+    }
 
     @Comment("Render the status messages on the HUD instead of chat?")
     public boolean hudrender = true;
