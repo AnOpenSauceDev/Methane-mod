@@ -50,7 +50,7 @@ public class Methane implements ModInitializer {
             int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
             if(intToBoolConversion(data[0])){
             MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
-            Debug.Log("forcing methane config");
+            Debug.Log("forcing methane server config");
 
             ServerForbidsChanging = true;
             playerBlockingPacket = true;

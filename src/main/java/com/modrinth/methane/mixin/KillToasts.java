@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = ToastManager.class,priority = 1000)
+@Mixin(value = ToastManager.class,priority = 4500)
 public class KillToasts {
 
     @Inject(method = "draw",at = @At("HEAD"),cancellable = true)
