@@ -51,7 +51,7 @@ public class MethaneSettings implements ConfigData {
         @Comment("Forcefully deletes weather.")
         public boolean DestroyWeather;
 
-
+        @Comment("Does nothing if sodium is installed")
         public boolean RenderLayerSkips;
 
     }
