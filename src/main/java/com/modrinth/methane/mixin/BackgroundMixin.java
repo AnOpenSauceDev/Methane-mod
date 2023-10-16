@@ -1,6 +1,7 @@
 package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
+import com.modrinth.methane.MethaneSettings;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
@@ -20,7 +21,7 @@ public class BackgroundMixin {
      */
     @Inject(method = "applyFog", at = @At("HEAD"), cancellable = true)
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
-        if (!Methane.ModActive && !Methane.settings.persistFogSettings) return;
+        if (!Methane.ModActive && !MethaneSettings.FogSettings.persistFogSettings) return;
 
         if (hasBlindOrDark(camera.getFocusedEntity())) return;
 
@@ -33,12 +34,12 @@ public class BackgroundMixin {
 
     @Unique
     private static boolean shouldDisableFog(CameraSubmersionType submersionType, boolean thickFog, BackgroundRenderer.FogType fogType) {
-        if (submersionType == CameraSubmersionType.NONE && Methane.settings.disableAirFog) return true;
-        if (submersionType == CameraSubmersionType.WATER && Methane.settings.disableWaterFog) return true;
-        if (submersionType == CameraSubmersionType.LAVA && Methane.settings.disableLavaFog) return true;
-        if (submersionType == CameraSubmersionType.POWDER_SNOW && Methane.settings.disablePowderedSnowFog) return true;
-        if (thickFog && Methane.settings.disableThickFog) return true;
-        if (fogType == BackgroundRenderer.FogType.FOG_SKY && Methane.settings.disableSkyFog) return true;
+        if (submersionType == CameraSubmersionType.NONE && MethaneSettings.FogSettings.disableAirFog) return true;
+        if (submersionType == CameraSubmersionType.WATER && MethaneSettings.FogSettings.disableWaterFog) return true;
+        if (submersionType == CameraSubmersionType.LAVA && MethaneSettings.FogSettings.disableLavaFog) return true;
+        if (submersionType == CameraSubmersionType.POWDER_SNOW && MethaneSettings.FogSettings.disablePowderedSnowFog) return true;
+        if (thickFog && MethaneSettings.FogSettings.disableThickFog) return true;
+        if (fogType == BackgroundRenderer.FogType.FOG_SKY && MethaneSettings.FogSettings.disableSkyFog) return true;
         return false;
     }
 
