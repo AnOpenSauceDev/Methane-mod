@@ -20,17 +20,17 @@ public class MethaneSettings implements ConfigData {
     @ConfigEntry.Gui.CollapsibleObject
     public FogSettings fogSettings = new FogSettings();
 
-    public class FogSettings{
+    public static class FogSettings{
         @Comment("Toggle whether to keep fog settings even with Methane disabled.")
-        public static boolean persistFogSettings = false;
-        public static boolean disableAirFog = false; // the fog pass that obscures terrain
-        public static boolean disableWaterFog = false; // the fog layer that tints everything blue
-        public static boolean disableLavaFog = false; // the thing that tints everything orange
-        public static boolean disablePowderedSnowFog = false; // pretty self-explanatory
+        public  boolean persistFogSettings = false;
+        public boolean disableAirFog = false; // the fog pass that obscures terrain
+        public boolean disableWaterFog = false; // the fog layer that tints everything blue
+        public  boolean disableLavaFog = false; // the thing that tints everything orange
+        public  boolean disablePowderedSnowFog = false; // pretty self-explanatory
         @Comment("(you should probably disable this)")
-        public static boolean disableThickFog = false; // Nether Fog pass
+        public  boolean disableThickFog = false; // Nether Fog pass
         @Comment("The fog that covers terrain in")
-        public static boolean disableSkyFog = false; // I think this is another fog pass
+        public  boolean disableSkyFog = false; // I think this is another fog pass
     }
 
 
@@ -40,19 +40,19 @@ public class MethaneSettings implements ConfigData {
     //@Comment("The default world brightness value (15 default and effective max)")
     //public double brightness = 1000; // unused for now because of a ton of issues
 
-    public class DestructiveSettings{
+    public static class DestructiveSettings{
 
         @Comment("Whether or not we calculate rainfall in biomes (breaks a lot of rain effects, but has performance benefits)")
-        public static boolean destructiveweatheroptimizations = false;
+        public  boolean destructiveweatheroptimizations = false;
 
         @Comment("Deletes the sky (NOT the same as sky fog), and gives a small performance boost. Will also remove the sun + moon")
-        public static boolean DestroySky;
+        public boolean DestroySky;
 
         @Comment("Forcefully deletes weather.")
-        public static boolean DestroyWeather;
+        public boolean DestroyWeather;
 
 
-        public static boolean RenderLayerSkips;
+        public boolean RenderLayerSkips;
 
     }
 

@@ -75,6 +75,7 @@ public class MethaneClient implements ClientModInitializer {
 
             }else
             {
+
                 client.player.sendMessage(Text.translatable("methane.offline"));
             }
 
