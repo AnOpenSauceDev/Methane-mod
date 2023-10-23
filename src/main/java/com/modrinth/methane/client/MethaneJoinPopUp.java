@@ -1,5 +1,7 @@
 package com.modrinth.methane.client;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.font.MultilineText;
@@ -12,6 +14,7 @@ import net.minecraft.text.Text;
 
 import static com.modrinth.methane.client.MethaneClient.METHANE_RESP_PACKET;
 
+@Environment(EnvType.CLIENT)
 public class MethaneJoinPopUp extends Screen {
 
     private Screen parent;

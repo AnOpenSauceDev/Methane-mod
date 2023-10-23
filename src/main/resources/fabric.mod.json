@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "methane",
-  "version": "2.4",
+  "version": "2.5",
   "name": "Methane",
   "description": "Explosive optimisations for your favourite block game.",
   "authors": ["AnOpenSauceDev"],

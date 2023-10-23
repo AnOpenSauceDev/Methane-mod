@@ -1,10 +1,12 @@
 package com.modrinth.methane.client;
 
 import com.modrinth.methane.Methane;
+import com.modrinth.methane.util.Debug;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
@@ -13,6 +15,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
+import static com.modrinth.methane.util.MethaneConstants.METHANE_STATE_PACKET;
+import static net.minecraft.client.realms.task.LongRunningTask.setScreen;
+
 public class MethaneClient implements ClientModInitializer {
 
     public KeyBinding MethaneToggle;
@@ -20,9 +25,32 @@ public class MethaneClient implements ClientModInitializer {
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
 
+    public static boolean intToBoolConversion(int i){
+        return i != 0; // if "i" is not zero, return true
+    }
 
     @Override
     public void onInitializeClient() {
+
+        HudRenderCallback.EVENT.register(new HudRenderListener());
+
+        ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
+
+
+            int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
+            if (intToBoolConversion(data[0])) {
+                MethaneClient.ToggleMethaneSetBool(client, intToBoolConversion(data[1]));
+                Debug.Log("forcing methane server config");
+
+                Methane.ServerForbidsChanging = true;
+                Methane.playerBlockingPacket = true;
+            } else {
+                // if the server allows changes
+                Debug.Log("Methane settings prompt open");
+                setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
+            }
+
+        }));
 
         Methane.ModActive = Methane.settings.modstate;
 

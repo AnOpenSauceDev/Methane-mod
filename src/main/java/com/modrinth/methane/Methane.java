@@ -6,10 +6,14 @@ import com.modrinth.methane.util.Debug;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import com.modrinth.methane.client.HudRenderListener;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -42,25 +46,10 @@ public class Methane implements ModInitializer {
         AutoConfig.register(MethaneSettings.class, GsonConfigSerializer::new);
         settings = AutoConfig.getConfigHolder(MethaneSettings.class).getConfig();
 
-        HudRenderCallback.EVENT.register(new HudRenderListener());
-
-        ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET,((client, handler, buf, responseSender) -> {
 
 
-            int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
-            if(intToBoolConversion(data[0])){
-            MethaneClient.ToggleMethaneSetBool(client,intToBoolConversion(data[1]));
-            Debug.Log("forcing methane server config");
 
-            ServerForbidsChanging = true;
-            playerBlockingPacket = true;
-            }else {
-                // if the server allows changes
-                Debug.Log("Methane settings prompt open");
-                setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
-            }
 
-        }));
 
         if(Methane.settings.destructiveSettings.DestroySky || Methane.settings.destructiveSettings.DestroyWeather || Methane.settings.destructiveSettings.destructiveweatheroptimizations || Methane.settings.destructiveSettings.RenderLayerSkips){
             Methane.MethaneLogger.warn("One or more destructive Methane renderer features are being used. You might experience unusual bugs with other mods.");
