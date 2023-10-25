@@ -5,7 +5,6 @@ import com.modrinth.methane.client.MethaneJoinPopUp;
 import com.modrinth.methane.util.Debug;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import com.modrinth.methane.client.HudRenderListener;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
@@ -45,9 +44,6 @@ public class Methane implements ModInitializer {
 
         AutoConfig.register(MethaneSettings.class, GsonConfigSerializer::new);
         settings = AutoConfig.getConfigHolder(MethaneSettings.class).getConfig();
-
-
-
 
 
 

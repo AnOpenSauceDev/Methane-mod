@@ -32,7 +32,7 @@ public class MethaneClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        HudRenderCallback.EVENT.register(new HudRenderListener());
+        //HudRenderCallback.EVENT.register(new HudRenderListener());
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
 
@@ -93,9 +93,22 @@ public class MethaneClient implements ClientModInitializer {
         if(!Methane.ServerForbidsChanging || force){
 
         Methane.ModActive = !Methane.ModActive;
-        HudRenderListener.ShowTicks = (15 * 20);
-        if(!Methane.settings.hudrender){
 
+        if(Methane.settings.hudrender){
+
+            if(Methane.ModActive)
+            {
+
+                client.player.sendMessage(Text.translatable("methane.active"),true);
+
+            }else
+            {
+
+                client.player.sendMessage(Text.translatable("methane.offline"),true);
+            }
+
+
+        }else {
             if(Methane.ModActive)
             {
 
@@ -106,27 +119,41 @@ public class MethaneClient implements ClientModInitializer {
 
                 client.player.sendMessage(Text.translatable("methane.offline"));
             }
-
-        }
         }
     }
+     }
 
     public static void ToggleMethaneSetBool(MinecraftClient client,boolean state) {
 
 
 
         Methane.ModActive = state;
-        HudRenderListener.ShowTicks = (15 * 20);
-        if(!Methane.settings.hudrender){
+        if(Methane.settings.hudrender) {
+            if(Methane.settings.hudrender){
 
-            if(Methane.ModActive)
-            {
+                if(Methane.ModActive)
+                {
 
-                client.player.sendMessage(Text.translatable("methane.active"));
+                    client.player.sendMessage(Text.translatable("methane.active"),true);
 
-            }else
-            {
-                client.player.sendMessage(Text.translatable("methane.offline"));
+                }else
+                {
+
+                    client.player.sendMessage(Text.translatable("methane.offline"),true);
+                }
+
+
+            }else {
+                if(Methane.ModActive)
+                {
+
+                    client.player.sendMessage(Text.translatable("methane.active"));
+
+                }else
+                {
+
+                    client.player.sendMessage(Text.translatable("methane.offline"));
+                }
             }
 
         }

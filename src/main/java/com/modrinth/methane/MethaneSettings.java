@@ -13,7 +13,7 @@ public class MethaneSettings implements ConfigData {
     public boolean modstate = true;
 
     @Comment("Render the status messages on the HUD instead of chat?")
-    public boolean hudrender = true;
+    public boolean hudrender = false;
 
 
 
