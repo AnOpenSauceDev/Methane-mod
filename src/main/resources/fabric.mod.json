@@ -32,5 +32,12 @@
     "cloth-config": "*",
     "fabricloader": ">=0.14.0",
     "minecraft": ">=1.20"
-  }
+  },
+  "suggests": {
+    "modmenu": "*",
+    "methane_server": "*"
+  },
+  "contributors": [
+    "AnOpenSauceDev","JustAlittleWolf","FITFC","craftish37","ItsRedlyXD"
+  ]
 }
