@@ -10,7 +10,7 @@ A Fabric/Quilt performance mod.
 ### for server admins
 There is a (work in progress) tool to manage fullbright settings for Methane clients, [available here.](https://github.com/AnOpenSauceDev/Methane-Server-Utils) Support for this in the mod itself will come alongside the next major Methane update.
 
-### for other programmers
+### for contributors
 Contributions are welcome! If you want to help out, [**please read this guide**](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/CONTRIBUTING.md). <br>
 
 
@@ -25,8 +25,6 @@ Enjoy Methane? **Leave a ⭐** (it gives me dopamine)
 
 I'm working on other projects most of the time, so don't expect me to finish things straight away. <br>
 Any questions you have should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
-
-If you **REALLY** want to get your hands on bleeding-edge builds (for whatever reason), github actions always has builds of the latest commits.
 
 > [!IMPORTANT]
 > please do not re-upload my mods to other platforms without my permission. The only places this mod is available and supported is on Modrinth and Github. <br>
