@@ -5,7 +5,7 @@
 A Fabric/Quilt performance mod.
 
 ### Mod compat
-[available here.](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/Compatability.md)
+[available here.](https://github.com/AnOpenSauceDev/Methane-mod/blob/master/Compatability.md) (Really outdated!)
 
 ### for server admins
 There is a tool to manage fullbright settings for Methane clients, [available here.](https://github.com/AnOpenSauceDev/Methane-Server-Utils)
