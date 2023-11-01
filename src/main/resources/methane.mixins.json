@@ -12,6 +12,7 @@
     "BackgroundMixin",
     "DestructiveWeatherOptimisation",
     "GameRendererMixin",
+    "HandledScreenMixin",
     "KillToasts",
     "LightingUpdateMixin",
     "SaneParticles",

@@ -54,6 +54,9 @@ public class MethaneSettings implements ConfigData {
         @Comment("Does nothing if sodium is installed")
         public boolean RenderLayerSkips;
 
+        @Comment("Removes ALL screen backgrounds for a performance boost.")
+        public boolean DestroyScreens;
+
     }
 
 

@@ -23,5 +23,6 @@
   "text.autoconfig.methane.option.destructiveSettings": "Destructive Methane Settings",
   "text.autoconfig.methane.option.destructiveSettings.DestroySky": "Destroy Sky",
   "text.autoconfig.methane.option.destructiveSettings.DestroyWeather": "Destroy Weather",
-  "text.autoconfig.methane.option.destructiveSettings.RenderLayerSkips": "Disable String Renderer"
+  "text.autoconfig.methane.option.destructiveSettings.RenderLayerSkips": "Disable String Renderer",
+  "text.autoconfig.methane.option.destructiveSettings.DestroyScreens": "Remove HUD background Renderer"
 }
