@@ -34,6 +34,7 @@ public class MethaneClient implements ClientModInitializer {
 
         //HudRenderCallback.EVENT.register(new HudRenderListener());
 
+
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
 
 
@@ -51,6 +52,8 @@ public class MethaneClient implements ClientModInitializer {
             }
 
         }));
+
+
 
         Methane.ModActive = Methane.settings.modstate;
 
@@ -92,7 +95,11 @@ public class MethaneClient implements ClientModInitializer {
     public static void ToggleMethane(MinecraftClient client,boolean force) {
         if(!Methane.ServerForbidsChanging || force){
 
+
+
         Methane.ModActive = !Methane.ModActive;
+
+        Debug.Log("Methane state toggled to: " + Methane.ModActive);
 
         if(Methane.settings.hudrender){
 

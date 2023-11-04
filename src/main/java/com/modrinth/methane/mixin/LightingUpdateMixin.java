@@ -48,7 +48,8 @@ public abstract class LightingUpdateMixin implements PacketListener {
 
     @Inject(method = "update", at = @At("HEAD"),cancellable = true)
     public void cancel(float delta, CallbackInfo ci){
-        //if(Methane.ModActive) ci.cancel();
+        if(Methane.ModActive) ci.cancel();
+
     }
 
 

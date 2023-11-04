@@ -6,6 +6,7 @@
   "mixins": [
     "BackgroundMixin",
     "GameRendererMixin",
+    "LightingProviderMixin",
     "LightingUpdateMixin"
   ],
   "client": [
@@ -15,6 +16,7 @@
     "HandledScreenMixin",
     "KillToasts",
     "LightingUpdateMixin",
+    "LightmapAccess",
     "SaneParticles",
     "WorldRendererMixin"
   ],

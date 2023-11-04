@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = ToastManager.class,priority = 4500) // take priority over other mixins
+@Mixin(value = ToastManager.class,priority = 4500) // take priority over other mixins (and The Open Sauce Toast Killer)
 public class KillToasts {
 
     @Inject(method = "draw",at = @At("HEAD"),cancellable = true)
@@ -42,7 +42,7 @@ public class KillToasts {
          */
         @Overwrite
         public boolean draw(int x, DrawContext context) { // lie about drawing
-            Debug.Log("prevented a toast from drawing on client");
+            Debug.Log("prevented a toast from drawing!");
             return true;
         }
     }
