@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "icon": "assets/methane/Methane-logo-Large.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "com.modrinth.methane.Methane"
@@ -34,8 +34,13 @@
     "minecraft": ">=1.20"
   },
   "suggests": {
-    "modmenu": "*",
     "methane_server": "*"
+  },
+  "recommends": {
+    "modmenu": "*"
+  },
+  "conflicts": {
+    "starlight": "*"
   },
   "contributors": [
     "JustAlittleWolf","FITFC","craftish37","ItsRedlyXD"
