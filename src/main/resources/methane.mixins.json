@@ -12,11 +12,11 @@
   "client": [
     "BackgroundMixin",
     "DestructiveWeatherOptimisation",
+    "GameMenuScreenMixin",
     "GameRendererMixin",
     "HandledScreenMixin",
     "KillToasts",
     "LightingUpdateMixin",
-    "LightmapAccess",
     "SaneParticles",
     "WorldRendererMixin"
   ],

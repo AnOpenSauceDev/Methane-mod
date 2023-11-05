@@ -34,6 +34,8 @@ public class MethaneClient implements ClientModInitializer {
 
         //HudRenderCallback.EVENT.register(new HudRenderListener());
 
+        Methane.isClient = true;
+
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
 

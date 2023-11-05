@@ -32,6 +32,8 @@ public class Methane implements ModInitializer {
     public static Logger MethaneLogger = LoggerFactory.getLogger(MOD_NAME);
     public static MethaneSettings settings;
 
+    public static boolean isClient = false;
+
     public static boolean playerBlockingPacket; // whether the player was blocked due to a race condition
 
     public static boolean ServerForbidsChanging = false;
