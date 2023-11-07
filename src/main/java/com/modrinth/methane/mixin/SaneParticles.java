@@ -44,7 +44,7 @@ public abstract class SaneParticles {
     @Inject(method = "getBrightness",at = @At("HEAD"), cancellable = true)
     public void skipBrightnessCalc(float tint, CallbackInfoReturnable<Integer> cir){
 
-        if(Methane.ModActive) cir.cancel(); // saves a lot of time, probably because getting the light of hundreds of particles without *any* grouping is slow
+        if(Methane.ModActive) cir.cancel(); // saves a lot of CPU time, probably because getting the light of hundreds of particles without *any* grouping is slow
 
     }
 
@@ -61,7 +61,8 @@ public abstract class SaneParticles {
         double d = dx;
         double e = dy;
         double f = dz;
-       /*
+
+       /* for some reason this saves tonnes of CPU time when it rains...
         if (collidesWithWorld && (dx != 0.0 || dy != 0.0 || dz != 0.0) && dx * dx + dy * dy + dz * dz < MAX_SQUARED_COLLISION_CHECK_DISTANCE && !Methane.settings.destructiveweatheroptimizations) {
             Vec3d vec3d = Entity.adjustMovementForCollisions(null, new Vec3d(dx, dy, dz), this.getBoundingBox(), this.world, List.of());
             dx = vec3d.x;

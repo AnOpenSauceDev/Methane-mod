@@ -37,6 +37,7 @@ public class MethaneClient implements ClientModInitializer {
         Methane.isClient = true;
 
 
+
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
 
 
