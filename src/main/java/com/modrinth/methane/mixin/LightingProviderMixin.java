@@ -30,7 +30,7 @@ public abstract class LightingProviderMixin {
     }
 
     boolean isNotInSinglePlayer(){ // we lose out on a lot of performance, but saving is broken without it
-        return MinecraftClient.getInstance().isInSingleplayer();
+        return !MinecraftClient.getInstance().isInSingleplayer();
     }
 
 

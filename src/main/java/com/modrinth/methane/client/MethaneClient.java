@@ -72,9 +72,6 @@ public class MethaneClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
-            if(MinecraftClient.getInstance().isInSingleplayer() && MinecraftClient.getInstance().player != null && Debug.isDev){
-                MinecraftClient.getInstance().player.sendMessage(Text.literal("c"),true);
-            }
 
 
             if(client.player == null){ // I'm assuming that ClientPlayerEntity is only ever null if you quit the server.
