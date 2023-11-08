@@ -3,6 +3,7 @@ package com.modrinth.methane;
 import com.modrinth.methane.client.MethaneClient;
 import com.modrinth.methane.client.MethaneJoinPopUp;
 import com.modrinth.methane.util.Debug;
+import com.modrinth.methane.util.MethaneTests;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.EnvType;
@@ -52,6 +53,13 @@ public class Methane implements ModInitializer {
         if(Methane.settings.destructiveSettings.DestroySky || Methane.settings.destructiveSettings.DestroyWeather || Methane.settings.destructiveSettings.destructiveweatheroptimizations || Methane.settings.destructiveSettings.RenderLayerSkips){
             Methane.MethaneLogger.warn("One or more destructive Methane renderer features are being used. You might experience unusual bugs with other mods.");
         }
+
+        /*
+        for(int x = 0; x< 10; x++){
+            Debug.Log("Benchmarking Random, benchmark #" + x);
+            MethaneTests.BenchmarkRandom();
+        }
+         */
     }
 
 

@@ -11,8 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(HandledScreen.class)
 public class HandledScreenMixin {
 
-
-   @Inject(method = "renderBackground", at =@At("HEAD"), cancellable = true)
-    public void backgroundRemoval(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) { if(Methane.settings.destructiveSettings.DestroyScreens) ci.cancel(); }
+    // awesome one-liner that gives a neat performance boost by... destroying menu backgrounds.
+   @Inject(method = "renderBackground", at =@At("HEAD"), cancellable = true) public void backgroundRemoval(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) { if(Methane.settings.destructiveSettings.DestroyScreens) ci.cancel(); }
 
 }

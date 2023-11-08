@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ToastManager.class,priority = 4500) // take priority over other mixins (and The Open Sauce Toast Killer)
-public class KillToasts {
+public class KillToasts { // basically the entire source code of The Open Sauce Toast Killer is here.
 
     @Inject(method = "draw",at = @At("HEAD"),cancellable = true)
     public void killToasts(DrawContext context, CallbackInfo ci){
@@ -37,8 +37,8 @@ public class KillToasts {
     @Mixin(targets = "net.minecraft.client.toast.ToastManager$Entry")
     static class Entry<T extends Toast> { // inner class of ToastManager
         /**
-         * @author
-         * @reason
+         * @author AnOpenSauceDev
+         * @reason remove toast rendering logic
          */
         @Overwrite
         public boolean draw(int x, DrawContext context) { // lie about drawing

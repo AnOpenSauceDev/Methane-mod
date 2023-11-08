@@ -7,7 +7,8 @@
     "BackgroundMixin",
     "GameRendererMixin",
     "LightingProviderMixin",
-    "LightingUpdateMixin"
+    "LightingUpdateMixin",
+    "ShutdownHook"
   ],
   "client": [
     "BackgroundMixin",

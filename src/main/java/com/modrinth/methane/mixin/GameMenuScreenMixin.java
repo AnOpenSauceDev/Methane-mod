@@ -18,4 +18,9 @@ public class GameMenuScreenMixin {
         if(MinecraftClient.getInstance().isInSingleplayer()) MethaneClient.ToggleMethaneSetBool(MinecraftClient.getInstance(),false);
     }
 
+    @Inject(method = "disconnect",at=@At("TAIL"))
+    public void gracefullyHandleDisconnections2(CallbackInfo ci){
+        MethaneClient.ToggleMethaneSetBool(MinecraftClient.getInstance(),true);
+    }
+
 }

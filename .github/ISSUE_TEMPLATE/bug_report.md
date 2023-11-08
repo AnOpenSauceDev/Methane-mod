@@ -3,7 +3,7 @@ name: Bug report
 about: general issues
 title: "[Issue] something broke!"
 labels: bug
-assignees: ''
+assignees: 'AnOpenSauceDev'
 
 ---
 

@@ -35,8 +35,8 @@ public abstract class LightingProviderMixin {
 
 
     /**
-     * @author
-     * @reason
+     * @author AnOpenSauceDev
+     * @reason mess with lighting updates, allowing us to "pause" lighting and save CPU time.
      */
     @Inject(method = "doLightUpdates",at =@At("HEAD"),cancellable = true)
     public void doLightUpdates(CallbackInfoReturnable<Integer> cir) {

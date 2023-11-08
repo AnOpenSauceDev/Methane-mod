@@ -1,6 +1,7 @@
 package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
+import com.modrinth.methane.util.MethaneConstants;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.network.listener.PacketListener;
 import org.spongepowered.asm.mixin.Mixin;
@@ -38,8 +39,7 @@ public abstract class LightingUpdateMixin implements PacketListener {
         }
         else
         {
-
-            this.flickerIntensity += (float)((Math.random() - Math.random()) * Math.random() * Math.random() * 0.1);
+            this.flickerIntensity += (float)((MethaneConstants.SharedRandom.nextFloat() - MethaneConstants.SharedRandom.nextFloat()) * MethaneConstants.SharedRandom.nextFloat() * MethaneConstants.SharedRandom.nextFloat() * 0.1);
             this.flickerIntensity *= 0.9f;
             this.dirty = true;
         }

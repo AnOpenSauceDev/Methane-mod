@@ -4,7 +4,7 @@ about: Issues involving bad translations, spelling/grammar mistakes, un-translat
   fields and more.
 title: ''
 labels: enhancement, good first issue
-assignees: ''
+assignees: 'AnOpenSauceDev'
 
 ---
 

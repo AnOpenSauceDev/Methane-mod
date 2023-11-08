@@ -3,7 +3,7 @@ name: Request/Enhancement
 about: Suggest an idea for this project
 title: "[Enhancement/Suggestion] Example Issue"
 labels: enhancement
-assignees: ''
+assignees: 'AnOpenSauceDev'
 
 ---
 
