@@ -40,7 +40,7 @@ public abstract class LightingProviderMixin {
      */
     @Inject(method = "doLightUpdates",at =@At("HEAD"),cancellable = true)
     public void doLightUpdates(CallbackInfoReturnable<Integer> cir) {
-        if(Methane.ModActive && isNotInSinglePlayer()) cir.cancel();
+        if(Methane.ModActive) cir.cancel();
     }
 
 
