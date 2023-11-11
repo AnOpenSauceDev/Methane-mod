@@ -15,7 +15,8 @@ public class MethaneSettings implements ConfigData {
     @Comment("Render the status messages on the HUD instead of chat?")
     public boolean hudrender = false;
 
-
+    @Comment("Use the old Methane lighting 'engine', has a smaller performance boost, but can fix compatibility with some mods and a few bugs.")
+    public boolean useOldLightingEngine = false;
 
     @ConfigEntry.Gui.CollapsibleObject
     public FogSettings fogSettings = new FogSettings();

@@ -3,6 +3,7 @@
   "methane.offline": "Methane disabled!",
   "key.methane.toggle": "Toggle Methane",
   "category.methane.keys": "Methane Keybinds",
+  "text.autoconfig.methane.option.useOldLightingEngine": "Use Legacy lighting engine?",
   "text.autoconfig.methane.option.fogSettings.disableAirFog": "Disable Air Fog",
   "text.autoconfig.methane.option.fogSettings.disableWaterFog": "Disable Underwater Fog",
   "text.autoconfig.methane.option.fogSettings.disableLavaFog": "Disable Lava Fog",

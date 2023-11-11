@@ -24,5 +24,6 @@
   "text.autoconfig.methane.option.destructiveSettings.DestroySky": "DESTROY THE MOON!!121!!",
   "text.autoconfig.methane.option.destructiveSettings.DestroyWeather": "DESTROY Weather EVEN MORE!!!@##41?2!@! WOW!",
   "text.autoconfig.methane.option.destructiveSettings.RenderLayerSkips": "remove yarn from teh game ;(",
-  "text.autoconfig.methane.option.destructiveSettings.DestroyScreens": "remove backgroundz"
+  "text.autoconfig.methane.option.destructiveSettings.DestroyScreens": "remove backgroundz",
+  "text.autoconfig.methane.option.useOldLightingEngine": "can haz old Methane?"
 }
