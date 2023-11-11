@@ -20,7 +20,7 @@ public class GameMenuScreenMixin {
 
     @Inject(method = "disconnect",at=@At("TAIL"))
     public void gracefullyHandleDisconnections2(CallbackInfo ci){
-        MethaneClient.ToggleMethaneSetBool(MinecraftClient.getInstance(),true);
+        if(Methane.settings.modstate) MethaneClient.ToggleMethaneSetBool(MinecraftClient.getInstance(),true);
     }
 
 }

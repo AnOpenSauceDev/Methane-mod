@@ -4,4 +4,4 @@ Hey there! Here is some basic documentation of how everything is laid out in Met
 
 everything in this package is either:
 - Core registration logic for Methane
-- Integrations with other mod libraries (Mod Menu, Cloth Config, etc)
+- Integrations with other mod libraries (Mod Menu, Cloth Config, etc.)
