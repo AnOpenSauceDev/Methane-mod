@@ -1,5 +1,6 @@
 package com.modrinth.methane.util;
 
+import com.modrinth.methane.Methane;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 
@@ -21,7 +22,7 @@ public class MethaneTests {
 
         long finaltime = System.nanoTime() - time;
 
-        Debug.Log("Random Benchmark Results (ThreadLocal): " + finaltime);
+        Methane.MethaneDebugger.Log("Random Benchmark Results (ThreadLocal): " + finaltime);
 
         Random random2 = Random.create();
 
@@ -34,10 +35,10 @@ public class MethaneTests {
 
         long finaltime2 = System.nanoTime() - time2;
 
-        Debug.Log("Random Benchmark Results (Random): " + finaltime2);
+        Methane.MethaneDebugger.Log("Random Benchmark Results (Random): " + finaltime2);
 
         if(finaltime < finaltime2){
-            Debug.Log("ThreadLocal was faster!");
+            Methane.MethaneDebugger.Log("ThreadLocal was faster!");
         }
 
     }

@@ -1,9 +1,7 @@
 package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
-import com.modrinth.methane.util.Debug;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
@@ -30,7 +28,7 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
      */
     @Overwrite
     public void add(Toast toast){
-        Debug.Log("prevented a toast from loading");
+        Methane.MethaneDebugger.Log("prevented a toast from loading");
     }
 
 
@@ -42,7 +40,7 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
          */
         @Overwrite
         public boolean draw(int x, DrawContext context) { // lie about drawing
-            Debug.Log("prevented a toast from drawing!");
+            Methane.MethaneDebugger.Log("prevented a toast from drawing!");
             return true;
         }
     }

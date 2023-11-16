@@ -1,7 +1,6 @@
 package com.modrinth.methane.client;
 
 import com.modrinth.methane.Methane;
-import com.modrinth.methane.util.Debug;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -44,13 +43,13 @@ public class MethaneClient implements ClientModInitializer {
             int[] data = buf.readIntArray(); // 0 = enforceModState, 1 = globalModState, 2 = forceMethane (won't ever be used)
             if (intToBoolConversion(data[0])) {
                 MethaneClient.ToggleMethaneSetBool(client, intToBoolConversion(data[1]));
-                Debug.Log("forcing methane server config");
+                Methane.MethaneDebugger.Log("forcing methane server config");
 
                 Methane.ServerForbidsChanging = true;
                 Methane.playerBlockingPacket = true;
             } else {
                 // if the server allows changes
-                Debug.Log("Methane settings prompt open");
+                Methane.MethaneDebugger.Log("Methane settings prompt open");
                 setScreen(new MethaneJoinPopUp(Text.of("Methane Server Settings"), intToBoolConversion(data[1])));
             }
 
@@ -102,7 +101,7 @@ public class MethaneClient implements ClientModInitializer {
 
         Methane.ModActive = !Methane.ModActive;
 
-        Debug.Log("Methane state toggled to: " + Methane.ModActive);
+        Methane.MethaneDebugger.Log("Methane state toggled to: " + Methane.ModActive);
 
         if(Methane.settings.hudrender){
 

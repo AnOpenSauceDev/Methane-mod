@@ -2,7 +2,6 @@ package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
 import com.modrinth.methane.MethaneSettings;
-import com.modrinth.methane.util.Debug;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
@@ -31,8 +30,8 @@ public class WorldRendererMixin {
     public void debugDeleteLayers(RenderLayer renderLayer, MatrixStack matrices, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, CallbackInfo ci){
 
         if(Methane.settings.destructiveSettings.RenderLayerSkips && renderLayer.toString().contains("tripwire") /*|| renderLayer.toString().contains("cutout")*/) {
-            Debug.Log(renderLayer.toString());
-            Debug.LogWarning("skipped renderlayer + " + renderLayer);
+            Methane.MethaneDebugger.Log(renderLayer.toString());
+            Methane.MethaneDebugger.LogWarning("skipped renderlayer + " + renderLayer);
             ci.cancel();
         }
     }
