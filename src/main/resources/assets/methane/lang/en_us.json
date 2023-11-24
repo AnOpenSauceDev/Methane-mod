@@ -15,6 +15,7 @@
   "text.autoconfig.methane.option.modstate": "Start with Methane on? ",
   "text.autoconfig.methane.option.brightness": "(experimental) Default terrain brightness: ",
   "text.autoconfig.methane.option.hudrender": "Render Status on HUD? ",
+  "text.autoconfig.methane.option.disableToasts": "Disable Toasts",
   "methane.reject": "Reject server config.",
   "methane.accept": "Accept server config.",
   "methane.yes": "Yes",
