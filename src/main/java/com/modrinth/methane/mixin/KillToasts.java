@@ -27,9 +27,9 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
      * @author AnOpenSauceDev
      * @reason try to forcefully overwrite toast behaviour
      */
-    @Overwrite
-    public void add(Toast toast){
-        if(Methane.settings.disableToasts) Methane.MethaneDebugger.Log("prevented a toast from loading");
+    @Inject(method = "add",at=@At("HEAD"),cancellable = true)
+    public void add(Toast toast, CallbackInfo ci){
+        if(Methane.settings.disableToasts){ Methane.MethaneDebugger.Log("prevented a toast from loading"); ci.cancel();}
     }
 
 
