@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = ToastManager.class,priority = 4500) // take priority over other mixins (and The Open Sauce Toast Killer)
 public class KillToasts { // basically the entire source code of The Open Sauce Toast Killer is here.
@@ -19,7 +20,7 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
     @Inject(method = "draw",at = @At("HEAD"),cancellable = true)
     public void killToasts(DrawContext context, CallbackInfo ci){
         //Debug.Log("Killed a toast that tried to draw");
-        ci.cancel();
+        if(Methane.settings.disableToasts) ci.cancel();
     }
 
     /**
@@ -28,7 +29,7 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
      */
     @Overwrite
     public void add(Toast toast){
-        Methane.MethaneDebugger.Log("prevented a toast from loading");
+        if(Methane.settings.disableToasts) Methane.MethaneDebugger.Log("prevented a toast from loading");
     }
 
 
@@ -38,10 +39,9 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
          * @author AnOpenSauceDev
          * @reason remove toast rendering logic
          */
-        @Overwrite
-        public boolean draw(int x, DrawContext context) { // lie about drawing
-            Methane.MethaneDebugger.Log("prevented a toast from drawing!");
-            return true;
+        @Inject(method = "draw", at=@At("HEAD"),cancellable = true)
+        public void draw(int x, DrawContext context, CallbackInfoReturnable<Boolean> cir) { // lie about drawing
+            if(Methane.settings.disableToasts) cir.setReturnValue(true);
         }
     }
 
