@@ -6,7 +6,7 @@ import net.fabricmc.loader.api.FabricLoader;
 
 public class MethaneServerError implements DedicatedServerModInitializer {
     @Override
-    public void onInitializeServer() { // Methane Server Utils might load after Methane due to how the Fabric Loader works, but this still gets the message across.
+    public void onInitializeServer() { // Methane Server Utils might load after Methane due to how the Fabric Loader works (meaning that the wrong message will pop up), but this still gets the message across.
 
         Methane.MethaneLogger.error("----------------------------------### WARNING! Please read! ###----------------------------------------");
 
