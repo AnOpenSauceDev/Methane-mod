@@ -21,7 +21,7 @@ public class MethaneJoinPopUp extends Screen {
     private boolean statedata;
 
      public MethaneJoinPopUp(Text title,boolean data) {
-        super(Text.of("Methane Server Settings"));
+        super(Text.translatable("methane.serverpopup.settings"));
          statedata = data;
          this.parent = parent;
     }
@@ -37,7 +37,7 @@ public class MethaneJoinPopUp extends Screen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-       MultilineText txt = MultilineText.create(textRenderer,Text.literal("This server recommends certain methane settings. You can choose whether to follow these settings or not."),256,0xFFFFFF);
+       MultilineText txt = MultilineText.create(textRenderer,Text.translatable("methane.serverpopup.info"),256,0xFFFFFF);
        txt.drawCenterWithShadow(context,width / 2, (height - 30) / 2);
     }
 
