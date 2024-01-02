@@ -49,6 +49,7 @@ public abstract class SaneParticles {
     }
 
 
+    // crashes with a handful of mods, but has a HUGE performance gain per-particle.
     /**
      * @author AnOpenSauceDev
      * @reason I couldn't get this to behave right, so I ruined everything

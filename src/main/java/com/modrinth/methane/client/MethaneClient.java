@@ -31,6 +31,8 @@ public class MethaneClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+
+
         //HudRenderCallback.EVENT.register(new HudRenderListener());
 
         Methane.isClient = true;

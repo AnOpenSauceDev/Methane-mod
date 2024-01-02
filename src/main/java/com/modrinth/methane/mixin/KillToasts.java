@@ -2,6 +2,8 @@ package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
 
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
@@ -17,10 +19,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = ToastManager.class,priority = 4500) // take priority over other mixins (and The Open Sauce Toast Killer)
 public class KillToasts { // basically the entire source code of The Open Sauce Toast Killer is here.
 
+    public boolean evaluateToastStatus(){
+        if(Methane.settings.disableToasts && !MinecraftClient.getInstance().getLanguageManager().getLanguage().toString().equals("ko_kr")){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     @Inject(method = "draw",at = @At("HEAD"),cancellable = true)
     public void killToasts(DrawContext context, CallbackInfo ci){
-        //Debug.Log("Killed a toast that tried to draw");
-        if(Methane.settings.disableToasts) ci.cancel();
+        if(evaluateToastStatus()) ci.cancel();
     }
 
     /**
@@ -29,19 +38,29 @@ public class KillToasts { // basically the entire source code of The Open Sauce 
      */
     @Inject(method = "add",at=@At("HEAD"),cancellable = true)
     public void add(Toast toast, CallbackInfo ci){
-        if(Methane.settings.disableToasts){ Methane.MethaneDebugger.Log("prevented a toast from loading"); ci.cancel();}
+        if(evaluateToastStatus()){ Methane.MethaneDebugger.Log("prevented a toast from loading"); ci.cancel();}
     }
 
 
     @Mixin(targets = "net.minecraft.client.toast.ToastManager$Entry")
     static class Entry<T extends Toast> { // inner class of ToastManager
+
+        public boolean evaluateToastStatus(){
+            if(Methane.settings.disableToasts && !MinecraftClient.getInstance().getLanguageManager().getLanguage().toString().equals("ko_kr")){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+
         /**
          * @author AnOpenSauceDev
          * @reason remove toast rendering logic
          */
         @Inject(method = "draw", at=@At("HEAD"),cancellable = true)
         public void draw(int x, DrawContext context, CallbackInfoReturnable<Boolean> cir) { // lie about drawing
-            if(Methane.settings.disableToasts) cir.setReturnValue(true);
+            if(evaluateToastStatus()) cir.setReturnValue(true);
         }
     }
 

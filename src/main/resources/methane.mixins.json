@@ -19,6 +19,7 @@
     "KillToasts",
     "LightingUpdateMixin",
     "SaneParticles",
+    "TitleScreenMixin",
     "WorldRendererMixin"
   ],
   "injectors": {

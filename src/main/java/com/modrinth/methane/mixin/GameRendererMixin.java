@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(value = GameRenderer.class, priority = 400) //exordium kludge
+@Mixin(value = GameRenderer.class, priority = 400) //our priority must be lower than exordium's own priority, otherwise exordium will get very angry and crash MC.
 public abstract class GameRendererMixin {
 
     @Shadow @Final private LightmapTextureManager lightmapTextureManager;
