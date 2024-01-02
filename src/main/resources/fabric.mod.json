@@ -31,7 +31,7 @@
   "depends": {
     "cloth-config": "*",
     "fabricloader": ">=0.14.0",
-    "minecraft": ">=1.20"
+    "minecraft": ">=1.20.2"
   },
   "suggests": {
     "methane_server": "*"
