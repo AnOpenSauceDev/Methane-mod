@@ -15,7 +15,7 @@ import java.util.Locale;
 public class TitleScreenMixin {
 
     @Inject(method = "init",at = @At("HEAD"))
-    public void warnUserIfKorean(CallbackInfo ci){
+    public void warnUserAtTitle(CallbackInfo ci){
         Methane.MethaneDebugger.Log("Starting minecraft under locale: " + MinecraftClient.getInstance().getLanguageManager().getLanguage());
 
         if(MinecraftClient.getInstance().getLanguageManager().getLanguage().toString().equals("ko_kr")){
