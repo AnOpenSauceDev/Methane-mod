@@ -11,6 +11,7 @@
   "text.autoconfig.methane.option.fogSettings.disableThickFog": "Disable Nether Fog",
   "text.autoconfig.methane.option.fogSettings.disableSkyFog": "Disable Sky Fog",
   "text.autoconfig.methane.option.fogSettings.persistFogSettings": "Persist Fog?",
+  "text.autoconfig.methane.option.dynamicShading": "Enable Dynamic Shading?",
   "text.autoconfig.methane.option.fogSettings": "Fog Overrides",
   "text.autoconfig.methane.option.modstate": "Start with Methane on? ",
   "text.autoconfig.methane.option.brightness": "(experimental) Default terrain brightness: ",

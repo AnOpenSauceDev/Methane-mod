@@ -23,6 +23,8 @@ public class MethaneClient implements ClientModInitializer {
 
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
+    public int REBUILD_TICKS_THRESHOLD = 20*20; // rebuild every x seconds
+    static int ticks = 0;
 
     public static boolean intToBoolConversion(int i){
         return i != 0; // if "i" is not zero, return true
@@ -36,6 +38,7 @@ public class MethaneClient implements ClientModInitializer {
         //HudRenderCallback.EVENT.register(new HudRenderListener());
 
         Methane.isClient = true;
+
 
 
 
@@ -71,12 +74,23 @@ public class MethaneClient implements ClientModInitializer {
         );
 
 
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
+            ticks++;
+
+
+            if(Methane.ModActive && Methane.settings.dynamicShading && client.player != null){
+                if(ticks > REBUILD_TICKS_THRESHOLD){
+                    BrightnessUtil.rebuildChunks(client); // has a *very* tiny performance impact, that only happens once every 20 seconds. It's also multithreaded!
+                    ticks = 0;
+                }
+            }
 
 
             if(client.player == null){ // I'm assuming that ClientPlayerEntity is only ever null if you quit the server.
                 Methane.ServerForbidsChanging = false;
+
             }else if(Methane.playerBlockingPacket){ // I wanted to avoid this at all costs, but it looks like I have to do this hack.
 
                     Methane.playerBlockingPacket = false;

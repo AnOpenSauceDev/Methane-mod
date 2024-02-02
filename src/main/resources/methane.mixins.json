@@ -20,7 +20,10 @@
     "LightingUpdateMixin",
     "SaneParticles",
     "TitleScreenMixin",
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "accessor.WorldRendererBuiltChunkStorageAccessor",
+    "getLightLevelHack.ChunkRenderReigonMixin",
+    "getLightLevelHack.ClientWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1

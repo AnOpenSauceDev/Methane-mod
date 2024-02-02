@@ -9,6 +9,10 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 public class MethaneSettings implements ConfigData {
     //TODO: we should transition to translatable comments (@Comment(Text.translatable("YOUR.THING.HERE")))
 
+
+    @Comment("auto-magically darkens the world at night!")
+    public boolean dynamicShading = true;
+
     @Comment("Methane's initial state. (You should set this to 'Yes' if you use sodium.)")
     public boolean modstate = true;
 

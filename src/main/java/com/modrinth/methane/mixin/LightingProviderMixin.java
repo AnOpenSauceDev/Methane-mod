@@ -43,7 +43,13 @@ public abstract class LightingProviderMixin {
         if(Methane.ModActive && !Methane.settings.useOldLightingEngine) cir.cancel();
     }
 
-
+    @Inject(method = "getLight", at = @At("HEAD"),cancellable = true)
+    public void huh(BlockPos pos, int ambientDarkness, CallbackInfoReturnable<Integer> cir){
+        if(Methane.ModActive) {
+            cir.setReturnValue(15);
+            cir.cancel();
+        }
+    }
 
 
 }
