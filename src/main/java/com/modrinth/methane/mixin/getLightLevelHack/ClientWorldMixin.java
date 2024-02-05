@@ -26,7 +26,7 @@ public class ClientWorldMixin {
     @Inject(method = "getBrightness", at = @At("HEAD"), cancellable = true)
     public void MethaneSetCustomLightLevel(Direction direction, boolean shaded, CallbackInfoReturnable<Float> cir){
         if(Methane.ModActive && Methane.settings.dynamicShading) {
-            cir.setReturnValue(BrightnessUtil.grabBaseGamma() * calculateBrightnessScale()); // only gets darker, never brighter. 1.0F = fully lit.
+            cir.setReturnValue(Math.min(BrightnessUtil.grabBaseGamma() * calculateBrightnessScale(),1)); // only gets darker, never brighter. 1.0F = fully lit.
         }
     }
 
