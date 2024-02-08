@@ -18,7 +18,7 @@ import static com.modrinth.methane.client.MethaneClient.METHANE_RESP_PACKET;
 public class MethaneJoinPopUp extends Screen {
 
     private Screen parent;
-    private boolean statedata;
+    private final boolean statedata;
 
      public MethaneJoinPopUp(Text title,boolean data) {
         super(Text.translatable("methane.serverpopup.settings"));

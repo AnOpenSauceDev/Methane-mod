@@ -5,7 +5,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
@@ -23,7 +22,7 @@ public class MethaneClient implements ClientModInitializer {
 
     public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
-    public int REBUILD_TICKS_THRESHOLD = 20*20; // rebuild every x seconds
+    public int REBUILD_TICKS_THRESHOLD = Methane.settings.rebuildSeconds*20; // rebuild every x seconds
     static int ticks = 0;
 
     public static boolean intToBoolConversion(int i){
@@ -154,32 +153,15 @@ public class MethaneClient implements ClientModInitializer {
 
         Methane.ModActive = state;
         if(Methane.settings.hudrender) {
-            if(Methane.settings.hudrender){
+            if (Methane.ModActive) {
 
-                if(Methane.ModActive)
-                {
+                client.player.sendMessage(Text.translatable("methane.active"), true);
 
-                    client.player.sendMessage(Text.translatable("methane.active"),true);
+            } else {
 
-                }else
-                {
-
-                    client.player.sendMessage(Text.translatable("methane.offline"),true);
-                }
-
-
-            }else {
-                if(Methane.ModActive)
-                {
-
-                    client.player.sendMessage(Text.translatable("methane.active"));
-
-                }else
-                {
-
-                    client.player.sendMessage(Text.translatable("methane.offline"));
-                }
+                client.player.sendMessage(Text.translatable("methane.offline"), true);
             }
+
 
         }
     }

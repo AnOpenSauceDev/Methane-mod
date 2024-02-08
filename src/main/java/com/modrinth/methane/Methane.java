@@ -2,25 +2,16 @@ package com.modrinth.methane;
 
 import com.github.anopensaucedev.libmcdevfabric.Debug;
 
-import com.modrinth.methane.util.MethaneTests;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static com.modrinth.methane.util.MethaneConstants.METHANE_STATE_PACKET;
 import static com.modrinth.methane.util.MethaneConstants.MOD_NAME;
-import static net.minecraft.client.realms.task.LongRunningTask.setScreen;
 
 public class Methane implements ModInitializer {
 
     public static boolean ModActive = true; // for toggles
-
-    public static Logger DebugLogger = LoggerFactory.getLogger("Methane Developer Debugger");
-
     public static Logger MethaneLogger = LoggerFactory.getLogger(MOD_NAME);
     public static MethaneSettings settings;
     public static Debug MethaneDebugger = new Debug("Methane Developer Debugger");

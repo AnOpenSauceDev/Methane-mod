@@ -13,7 +13,10 @@ public class MethaneSettings implements ConfigData {
     @Comment("auto-magically darkens the world at night!")
     public boolean dynamicShading = true;
 
-    @Comment("Methane's initial state. (You should set this to 'Yes' if you use sodium.)")
+    @Comment("Time between shading rebuilds with Dynamic Shading, has a *tiny* performance impact. 0 = realtime, which has a large chunk loading performance impact. Requires a restart to take effect.")
+    public int rebuildSeconds = 20;
+
+    @Comment("Methane's initial state. (You should set this to 'Yes' to stop some bugs from happening)")
     public boolean modstate = true;
 
     @Comment("Render the status messages on the HUD instead of chat?")
@@ -24,6 +27,7 @@ public class MethaneSettings implements ConfigData {
 
     public boolean disableToasts = true;
 
+    @Comment("Enable or disable fog effects.")
     @ConfigEntry.Gui.CollapsibleObject
     public FogSettings fogSettings = new FogSettings();
 
@@ -34,13 +38,13 @@ public class MethaneSettings implements ConfigData {
         public boolean disableWaterFog = false; // the fog layer that tints everything blue
         public  boolean disableLavaFog = false; // the thing that tints everything orange
         public  boolean disablePowderedSnowFog = false; // pretty self-explanatory
-        @Comment("(you should probably disable this)")
+
         public  boolean disableThickFog = false; // Nether Fog pass
         @Comment("The fog that covers terrain in")
         public  boolean disableSkyFog = false; // I think this is another fog pass
     }
 
-
+    @Comment("Can be used to greatly improve performance, at the cost of some visual features.")
     @ConfigEntry.Gui.CollapsibleObject
     public DestructiveSettings destructiveSettings = new DestructiveSettings();
 

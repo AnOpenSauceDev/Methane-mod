@@ -19,8 +19,6 @@ public class ClientWorldMixin {
 
     //TODO: lerp brightness to be less jarring
 
-    @Shadow @Final private MinecraftClient client;
-
 
 
     @Inject(method = "getBrightness", at = @At("HEAD"), cancellable = true)
