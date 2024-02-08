@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LightmapTextureManager.class)
-public abstract class LightingUpdateMixin implements PacketListener {
+public abstract class LightmapTextureManagerMixin implements PacketListener {
 
     @Shadow
     private float flickerIntensity;

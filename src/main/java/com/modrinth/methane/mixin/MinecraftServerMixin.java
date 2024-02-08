@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = MinecraftServer.class, priority = 3000)
-public class ShutdownHook {
+public class MinecraftServerMixin {
 
     //fixes saving when someone ALT-F4's
     @Inject(method = "shutdown", at = @At("HEAD"))

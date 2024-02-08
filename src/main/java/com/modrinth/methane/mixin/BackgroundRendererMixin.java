@@ -1,7 +1,6 @@
 package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
-import com.modrinth.methane.MethaneSettings;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
@@ -14,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = BackgroundRenderer.class)
-public class BackgroundMixin {
+public class BackgroundRendererMixin {
     /**
      * @author AnOpenSauceDev
      * @reason what fog??!?!? never heard of it.
