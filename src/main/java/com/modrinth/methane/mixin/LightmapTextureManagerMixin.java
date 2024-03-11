@@ -3,9 +3,12 @@ package com.modrinth.methane.mixin;
 import com.modrinth.methane.Methane;
 import com.modrinth.methane.client.MethaneClient;
 import com.modrinth.methane.util.MethaneConstants;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.texture.NativeImageBackedTexture;
+import net.minecraft.client.texture.TextureManager;
 import net.minecraft.network.listener.PacketListener;
+import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -28,6 +31,13 @@ public abstract class LightmapTextureManagerMixin implements PacketListener {
     @Mutable
     @Shadow @Final private NativeImageBackedTexture texture;
 
+    @Shadow public abstract void update(float delta);
+
+    @Mutable
+    @Shadow @Final private Identifier textureIdentifier;
+
+    @Shadow @Final private MinecraftClient client;
+
     /**
      * @author AnOpenSauceDev
      * @reason force light to not tick.
@@ -38,9 +48,10 @@ public abstract class LightmapTextureManagerMixin implements PacketListener {
         if(Methane.ModActive && !MethaneClient.DISABLED_LIGHTMAP){ // if methane is active, and the lightmap isn't disabled
             disable();
             MethaneClient.DISABLED_LIGHTMAP = true;
-        }else if(!Methane.ModActive && MethaneClient.DISABLED_LIGHTMAP){ // if methane isn't active, and the lightmap is disabled.
+        }else if(!Methane.ModActive && MethaneClient.DISABLED_LIGHTMAP){ // if methane isn't active, and the lightmap is enabled.
             //close();
             texture = new NativeImageBackedTexture(16, 16, false);
+            texture.upload();
             enable();
             MethaneClient.DISABLED_LIGHTMAP = false;
         }
