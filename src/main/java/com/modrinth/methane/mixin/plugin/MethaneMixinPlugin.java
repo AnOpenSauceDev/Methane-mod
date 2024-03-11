@@ -33,6 +33,10 @@ public class MethaneMixinPlugin implements IMixinConfigPlugin {
             Methane.MethaneLogger.warn("Overriding Methane's toast handler to use The Open Sauce Toast Killer.");
             return false;
         }
+        if(Objects.equals(mixinClassName,"com.modrinth.methane.mixin.ClientPlayNetworkHandlerMixin") && Objects.equals(FabricLoader.getInstance().getModContainer("minecraft").get().getMetadata().getVersion().getFriendlyString(), "1.20.2")){
+            Methane.MethaneLogger.warn("Disabling ClientPlayNetworkHandler Mixin, as you're on 1.20.2");
+            return false;
+        }
         return true;
     }
 
