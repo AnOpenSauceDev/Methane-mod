@@ -1,6 +1,7 @@
 package com.modrinth.methane.client;
 
 import com.modrinth.methane.Methane;
+import com.modrinth.methane.mixin.LightmapTextureManagerMixin;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -109,6 +110,10 @@ public class MethaneClient implements ClientModInitializer {
 
     }
 
+    public static boolean DISABLED_LIGHTMAP = false; // tracks whether we have destroyed a lightmap or not.
+
+
+
     public static void ToggleMethane(MinecraftClient client,boolean force) {
         if(!Methane.ServerForbidsChanging || force){
 
@@ -117,6 +122,8 @@ public class MethaneClient implements ClientModInitializer {
         Methane.ModActive = !Methane.ModActive;
 
         Methane.MethaneDebugger.Log("Methane state toggled to: " + Methane.ModActive);
+
+
 
         if(Methane.settings.hudrender){
 
