@@ -1,12 +1,12 @@
 package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
-import com.modrinth.methane.client.MethaneClient;
 import com.modrinth.methane.util.MethaneConstants;
 import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.texture.NativeImageBackedTexture;
 import net.minecraft.network.listener.PacketListener;
-import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -25,26 +25,12 @@ public abstract class LightmapTextureManagerMixin implements PacketListener {
 
     @Shadow public abstract void enable();
 
-    @Mutable
-    @Shadow @Final private NativeImageBackedTexture texture;
-
     /**
      * @author AnOpenSauceDev
      * @reason force light to not tick.
      */
     @Overwrite
     public void tick(){
-
-        if(Methane.ModActive && !MethaneClient.DISABLED_LIGHTMAP){ // if methane is active, and the lightmap isn't disabled
-            disable();
-            MethaneClient.DISABLED_LIGHTMAP = true;
-        }else if(!Methane.ModActive && MethaneClient.DISABLED_LIGHTMAP){ // if methane isn't active, and the lightmap is disabled.
-            //close();
-            texture = new NativeImageBackedTexture(16, 16, false);
-            enable();
-            MethaneClient.DISABLED_LIGHTMAP = false;
-        }
-
         if(Methane.ModActive){
             //disable();
             //TODO: light flicker impl
