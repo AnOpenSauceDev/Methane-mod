@@ -46,6 +46,8 @@ public abstract class LightmapTextureManagerMixin implements PacketListener {
         }
 
         if(Methane.ModActive){
+            //disable();
+            //TODO: light flicker impl
             this.dirty = false;
             return;
         }
