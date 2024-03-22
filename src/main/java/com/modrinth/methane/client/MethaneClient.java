@@ -114,7 +114,7 @@ public class MethaneClient implements ClientModInitializer {
 
 
 
-    public static void ToggleMethane(MinecraftClient client, boolean force) {
+    public static void ToggleMethane(MinecraftClient client,boolean force) {
         if(!Methane.ServerForbidsChanging || force){
 
 
@@ -123,7 +123,6 @@ public class MethaneClient implements ClientModInitializer {
 
         Methane.MethaneDebugger.Log("Methane state toggled to: " + Methane.ModActive);
 
-       BrightnessUtil.rebuildChunks(client);
 
 
         if(Methane.settings.hudrender){
@@ -157,7 +156,7 @@ public class MethaneClient implements ClientModInitializer {
 
     public static void ToggleMethaneSetBool(MinecraftClient client,boolean state) {
 
-        BrightnessUtil.rebuildChunks(client);
+
 
         Methane.ModActive = state;
         if(Methane.settings.hudrender) {
