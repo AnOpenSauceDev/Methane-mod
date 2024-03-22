@@ -13,13 +13,11 @@
   "plugin": "com.modrinth.methane.mixin.plugin.MethaneMixinPlugin",
   "client": [
     "BackgroundRendererMixin",
-    "ClientPlayNetworkHandlerMixin",
     "DestructiveWeatherOptimisation",
     "GameMenuScreenMixin",
     "GameRendererMixin",
     "HandledScreenMixin",
     "LightmapTextureManagerMixin",
-    "MinecraftClientMixin",
     "ParticleMixin",
     "TitleScreenMixin",
     "ToastManagerMixin",
