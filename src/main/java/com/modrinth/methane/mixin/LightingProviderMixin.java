@@ -21,6 +21,7 @@ public abstract class LightingProviderMixin {
 
     @Shadow @Final protected HeightLimitView world;
 
+    @Mutable
     @Shadow @Final private @Nullable ChunkLightProvider<?, ?> blockLightProvider;
 
     @Shadow @Final private @Nullable ChunkLightProvider<?, ?> skyLightProvider;
@@ -40,13 +41,13 @@ public abstract class LightingProviderMixin {
      */
     @Inject(method = "doLightUpdates",at =@At("HEAD"),cancellable = true)
     public void doLightUpdates(CallbackInfoReturnable<Integer> cir) {
-        if(Methane.ModActive && !Methane.settings.useOldLightingEngine) cir.cancel();
+        if(Methane.ModActive && !Methane.settings.useOldLightingEngine)
+            cir.cancel();
     }
 
     @Inject(method = "getLight", at = @At("HEAD"),cancellable = true)
-    public void huh(BlockPos pos, int ambientDarkness, CallbackInfoReturnable<Integer> cir){
+    public void forceLight(BlockPos pos, int ambientDarkness, CallbackInfoReturnable<Integer> cir){
         if(Methane.ModActive) {
-            cir.setReturnValue(15);
             cir.cancel();
         }
     }
