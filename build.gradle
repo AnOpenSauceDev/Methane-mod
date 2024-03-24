@@ -15,9 +15,16 @@ repositories {
     maven { url "https://maven.shedaniel.me/" }
     maven { url "https://maven.terraformersmc.com/releases/" }
 
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
     }
 }
 
@@ -32,7 +39,8 @@ dependencies {
 
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "maven.modrinth:libmcdev:${project.libmcdev_version}:core" // libMCdev
+
+    modImplementation "maven.modrinth:libmcdev:${project.libmcdev_version}" // libMCdev
     include "maven.modrinth:libmcdev:${libmcdev_version}" // bakes libMCDev into the mod
 }
 

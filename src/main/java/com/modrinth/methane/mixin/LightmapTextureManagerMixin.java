@@ -25,26 +25,6 @@ public abstract class LightmapTextureManagerMixin implements PacketListener {
 
     @Shadow public abstract void enable();
 
-    /**
-     * @author AnOpenSauceDev
-     * @reason force light to not tick.
-     */
-    @Overwrite
-    public void tick(){
-        if(Methane.ModActive){
-            //disable();
-            //TODO: light flicker impl
-            this.dirty = false;
-            return;
-        }
-        else
-        {
-            this.flickerIntensity += (float)((MethaneConstants.SharedRandom.nextFloat() - MethaneConstants.SharedRandom.nextFloat()) * MethaneConstants.SharedRandom.nextFloat() * MethaneConstants.SharedRandom.nextFloat() * 0.1);
-            this.flickerIntensity *= 0.9f;
-            this.dirty = true;
-        }
-
-    }
 
     @Inject(method = "update", at = @At("HEAD"),cancellable = true)
     public void cancel(float delta, CallbackInfo ci){
