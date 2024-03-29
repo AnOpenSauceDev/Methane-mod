@@ -8,7 +8,8 @@
     "GameRendererMixin",
     "LightingProviderMixin",
     "LightmapTextureManagerMixin",
-    "MinecraftServerMixin"
+    "MinecraftServerMixin",
+    "getLightLevelHack.MushroomPlantMixin"
   ],
   "plugin": "com.modrinth.methane.mixin.plugin.MethaneMixinPlugin",
   "client": [
@@ -17,10 +18,10 @@
     "GameMenuScreenMixin",
     "GameRendererMixin",
     "HandledScreenMixin",
-    "ToastManagerMixin",
     "LightmapTextureManagerMixin",
     "ParticleMixin",
     "TitleScreenMixin",
+    "ToastManagerMixin",
     "WorldRendererMixin",
     "accessor.WorldRendererBuiltChunkStorageAccessor",
     "getLightLevelHack.ChunkRenderReigonMixin",
