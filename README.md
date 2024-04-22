@@ -23,7 +23,7 @@ Enjoy Methane? **Leave a ⭐!**
 I'm working on other projects most of the time, so don't expect me to finish things straight away. <br>
 Any questions you have should be handled in [Discussions.](https://github.com/AnOpenSauceDev/Methane-mod/discussions) <br>
 
-> [!IMPORTANT]
-> please do not re-upload my mods to other platforms without my permission. The only places this mod is available and supported is on Modrinth and Github. <br>
+
+> I don't have a legal say over distribution of this mod, but it would be nice if you asked for permission before redistributing Methane on other platforms. <br>
 
 > Methane is on curseforge to prevent impersonation, no support will be given.
