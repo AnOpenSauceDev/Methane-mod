@@ -45,14 +45,14 @@ public class MethaneJoinPopUp extends Screen {
     protected void init() {
         yes = ButtonWidget.builder(Text.translatable("methane.yes"), button -> {
                     MethaneClient.ToggleMethaneSetBool(client,statedata);
-                    ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
+                    //ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 - 205, 20, 200, 20)
                 .tooltip(Tooltip.of(Text.translatable("methane.accept")))
                 .build();
         no = ButtonWidget.builder(Text.translatable("methane.no"), button -> {
-                    ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
+                    //ClientPlayNetworking.send(METHANE_RESP_PACKET,PacketByteBufs.empty());
                     close();
                 })
                 .dimensions(width / 2 + 5, 20, 200, 20)

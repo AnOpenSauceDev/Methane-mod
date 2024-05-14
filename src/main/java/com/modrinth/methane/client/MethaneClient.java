@@ -37,8 +37,7 @@ public class MethaneClient implements ClientModInitializer {
         //HudRenderCallback.EVENT.register(new HudRenderListener());
 
         Methane.isClient = true;
-
-
+        /*
 
 
         ClientPlayNetworking.registerGlobalReceiver(METHANE_STATE_PACKET, ((client, handler, buf, responseSender) -> {
@@ -58,6 +57,8 @@ public class MethaneClient implements ClientModInitializer {
             }
 
         }));
+
+         */
 
 
 
@@ -93,7 +94,7 @@ public class MethaneClient implements ClientModInitializer {
             }else if(Methane.playerBlockingPacket){ // I wanted to avoid this at all costs, but it looks like I have to do this hack.
 
                     Methane.playerBlockingPacket = false;
-                    ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
+                    //ClientPlayNetworking.send(METHANE_RESP_PACKET, PacketByteBufs.empty());
 
             }
 

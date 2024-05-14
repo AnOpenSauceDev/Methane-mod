@@ -14,11 +14,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = WorldRenderer.class,priority = 1000)
 public class WorldRendererMixin {
 
+    /*
     @Inject(method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FLnet/minecraft/client/render/Camera;ZLjava/lang/Runnable;)V", at = @At("HEAD"),cancellable = true)
     public void deletesky(MatrixStack matrices, Matrix4f projectionMatrix, float tickDelta, Camera camera, boolean thickFog, Runnable fogCallback, CallbackInfo ci){
         if(Methane.settings.destructiveSettings.DestroySky)
         ci.cancel();
     }
+
+     */
 
     @Inject(method = "renderWeather", at = @At("HEAD"),cancellable = true)
     public void delWeather(LightmapTextureManager manager, float tickDelta, double cameraX, double cameraY, double cameraZ, CallbackInfo ci){
@@ -27,7 +30,7 @@ public class WorldRendererMixin {
     }
 
     @Inject(method = "renderLayer", at = @At("HEAD"),cancellable = true)
-    public void debugDeleteLayers(RenderLayer renderLayer, MatrixStack matrices, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, CallbackInfo ci){
+    public void debugDeleteLayers(RenderLayer renderLayer, double x, double y, double z, Matrix4f matrix4f, Matrix4f positionMatrix, CallbackInfo ci){
 
         if(Methane.settings.destructiveSettings.RenderLayerSkips && renderLayer.toString().contains("tripwire") /*|| renderLayer.toString().contains("cutout")*/) {
             Methane.MethaneDebugger.Log(renderLayer.toString());
