@@ -2,6 +2,9 @@ package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.ScoreboardDisplaySlot;
+import net.minecraft.scoreboard.ScoreboardEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkSectionPos;
 import net.minecraft.world.HeightLimitView;
@@ -42,12 +45,13 @@ public abstract class LightingProviderMixin {
     @Inject(method = "doLightUpdates",at =@At("HEAD"),cancellable = true)
     public void doLightUpdates(CallbackInfoReturnable<Integer> cir) {
         if(Methane.ModActive && !Methane.settings.useOldLightingEngine)
-            cir.cancel();
+            cir.setReturnValue(0);
     }
 
     @Inject(method = "getLight", at = @At("HEAD"),cancellable = true)
     public void forceLight(BlockPos pos, int ambientDarkness, CallbackInfoReturnable<Integer> cir){
         if(Methane.ModActive) {
+            cir.setReturnValue(15);
             cir.cancel();
         }
     }

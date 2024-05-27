@@ -56,9 +56,6 @@ public class MethaneSettings implements ConfigData {
         @Comment("Whether or not we calculate rainfall in biomes (breaks a lot of rain effects, but has performance benefits)")
         public  boolean destructiveweatheroptimizations = false;
 
-        @Comment("Deletes the sky (NOT the same as sky fog), and gives a small performance boost. Will also remove the sun + moon")
-        public boolean DestroySky;
-
         @Comment("Forcefully deletes weather.")
         public boolean DestroyWeather;
 
