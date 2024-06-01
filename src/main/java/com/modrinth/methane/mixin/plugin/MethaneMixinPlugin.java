@@ -29,6 +29,10 @@ public class MethaneMixinPlugin implements IMixinConfigPlugin {
             Methane.MethaneLogger.error("Disabling Methane's Particle Optimization Mixin due to Iron's Spellbooks being installed!");
             return false;
         }
+        if(Objects.equals(mixinClassName, "com.modrinth.methane.mixin.ParticleMixin") && FabricLoader.getInstance().isModLoaded("ichor")){
+            Methane.MethaneLogger.error("Disabling Methane's Particle Optimization Mixin due to Ichor (Lunar Client)'s game-breaking particle mixin");
+            return false;
+        }
         if(Objects.equals(mixinClassName, "com.modrinth.methane.mixin.ToastManagerMixin") && FabricLoader.getInstance().isModLoaded("toastkiller")){
             Methane.MethaneLogger.warn("Overriding Methane's toast handler to use The Open Sauce Toast Killer.");
             return false;
