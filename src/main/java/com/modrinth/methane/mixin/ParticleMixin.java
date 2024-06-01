@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Particle.class)
+@Mixin(value = Particle.class,priority = 1200)
 public abstract class ParticleMixin {
 
     @Shadow public abstract Box getBoundingBox();
