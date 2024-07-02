@@ -12,7 +12,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
-import static com.modrinth.methane.client.MethaneClient.METHANE_RESP_PACKET;
+//import static com.modrinth.methane.client.MethaneClient.METHANE_RESP_PACKET;
 
 @Environment(EnvType.CLIENT)
 public class MethaneJoinPopUp extends Screen {
@@ -37,7 +37,7 @@ public class MethaneJoinPopUp extends Screen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-       MultilineText txt = MultilineText.create(textRenderer,Text.translatable("methane.serverpopup.info"),256,0xFFFFFF);
+       MultilineText txt = MultilineText.create(textRenderer,256,Text.translatable("methane.serverpopup.info"));
        txt.drawCenterWithShadow(context,width / 2, (height - 30) / 2);
     }
 

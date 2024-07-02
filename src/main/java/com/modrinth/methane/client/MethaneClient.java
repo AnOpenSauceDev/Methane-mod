@@ -13,14 +13,14 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
-import static com.modrinth.methane.util.MethaneConstants.METHANE_STATE_PACKET;
+
 import static net.minecraft.client.realms.task.LongRunningTask.setScreen;
 
 public class MethaneClient implements ClientModInitializer {
 
     public KeyBinding MethaneToggle;
 
-    public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
+    //public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
 
     public int REBUILD_TICKS_THRESHOLD = Methane.settings.rebuildSeconds*20; // rebuild every x seconds
     static int ticks = 0;

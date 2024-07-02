@@ -2,6 +2,7 @@ package com.modrinth.methane.mixin;
 
 import com.modrinth.methane.Methane;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.block.enums.CameraSubmersionType;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
 import net.minecraft.entity.Entity;
