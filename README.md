@@ -27,3 +27,6 @@ Any questions you have should be handled in [Discussions.](https://github.com/An
 > I don't have a legal say over distribution of this mod, but it would be nice if you asked for permission before redistributing Methane on other platforms. <br>
 
 > Methane is on curseforge to prevent impersonation, no support will be given.
+
+
+Why the name? It takes Minecraft (a carbon atom), and puts lots of optimizations that will probably break other mods (hydrogen), and releases it out into the air (where things will explode). This is why this mod has been rewritten almost 3 times already!
