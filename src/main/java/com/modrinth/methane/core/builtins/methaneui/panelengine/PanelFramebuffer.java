@@ -22,9 +22,6 @@ public class PanelFramebuffer {
     // use `beginWrite` and `endWrite`. The former take over render calls and the latter to restore render output to Minecraft's Framebuffer.
     SimpleFramebuffer panelFramebuffer = new SimpleFramebuffer(640,480,true,true);
 
-    RenderLayer layer = RenderLayer.of("temporaryrenderer",VertexFormats.POSITION_COLOR, VertexFormat.DrawMode.TRIANGLES,158382, RenderLayer.MultiPhaseParameters.builder().program(new RenderPhase.ShaderProgram(GameRenderer::getPositionColorProgram)).transparency(RenderPhase.Transparency.NO_TRANSPARENCY).build(false));
-    RenderLayer layer2 = RenderLayer.of("temporaryrenderer2",VertexFormats.POSITION_TEXTURE, VertexFormat.DrawMode.QUADS,158382, RenderLayer.MultiPhaseParameters.builder().transparency(RenderPhase.NO_TRANSPARENCY).program(new RenderPhase.ShaderProgram(GameRenderer::getPositionTexProgram)).build(false));
-
     public static ObjModel sTest = new ObjModel(Identifier.of("methane","sphere"), ObjModel.vertexBehaviour.TRIANGLES,false);
 
 
@@ -32,24 +29,19 @@ public class PanelFramebuffer {
 
         // framebuffer setup
         panelFramebuffer.initFbo(640,480,false); // should probably handle this in a better way
-        panelFramebuffer.setClearColor(0.5f,0.5f,0.5f,0.0f);
+        panelFramebuffer.setClearColor(0.0f,0.0f,0.0f,0.0f);
         panelFramebuffer.clear(true);
 
         RenderSystem.viewport(0,0,panelFramebuffer.textureWidth,panelFramebuffer.textureHeight);
 
         // setup framebuffer
-
-        //panelFramebuffer.beginWrite(true);
         HackRenderTarget(false);
 
-
-        // do crap
 
         MatrixStack mtx2 = new MatrixStack();
 
 
 
-        mtx2.loadIdentity();
 
         RenderSystem.backupProjectionMatrix();
         var renderStack = RenderSystem.getModelViewStack();
@@ -59,7 +51,7 @@ public class PanelFramebuffer {
         RenderSystem.applyModelViewMatrix();
 
         var mtx = new Matrix4f().perspective(
-                (float)(70 * (float) (Math.PI / 180.0)),
+                (70 * (float) (Math.PI / 180.0)),
                 panelFramebuffer.textureWidth / (float) panelFramebuffer.textureHeight,
                 0.05F,
                 MinecraftClient.getInstance().gameRenderer.getFarPlaneDistance()
@@ -79,20 +71,7 @@ public class PanelFramebuffer {
         RenderSystem.restoreProjectionMatrix();
         renderStack.popMatrix();
 
-        RenderSystem.applyModelViewMatrix(); // revert so we don't rendering
-
-
-        //RenderSystem.viewport(0,0,minecraftFramebuffer.textureWidth,minecraftFramebuffer.textureHeight);
-
-        // uhh
-
-        /*
-        if(MinecraftClient.getInstance().player.isSneaking()) {
-            ScreenshotRecorder.saveScreenshot(MinecraftClient.getInstance().runDirectory, panelFramebuffer, msg -> {
-            });
-        }
-
-         */
+        RenderSystem.applyModelViewMatrix();
 
         NativeImage nativeImage = new NativeImage(640, 480, false);
         RenderSystem.bindTexture(panelFramebuffer.getColorAttachment());
@@ -108,8 +87,6 @@ public class PanelFramebuffer {
         HackRenderTarget(true);
 
 
-        drawQuad(matrices,true);
-
 
 
         dc = new DrawContext(MinecraftClient.getInstance(),MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers());
@@ -117,67 +94,10 @@ public class PanelFramebuffer {
         dc.getMatrices().loadIdentity();
         dc.getMatrices().multiplyPositionMatrix(matrices.peek().getPositionMatrix());
         dc.getMatrices().peek().getPositionMatrix().rotateY(-(yaw * MathHelper.RADIANS_PER_DEGREE)).translate(-1.25f,0.75f,1.5f).scale(0.005f);
-
-        dc.drawText(MinecraftClient.getInstance().textRenderer,"rahh",0,0,0xFFFFFF,true);
         dc.drawTexture(Identifier.of("methane","panel_fb_x"),0,0,0,0,640,480,640,480);
 
 
 
-
-    }
-
-    public void drawQuad(MatrixStack matrices,boolean debug){
-
-
-
-        if(debug){
-
-            RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-
-            BufferBuilder screen = Tessellator.getInstance().begin(VertexFormat.DrawMode.QUADS,VertexFormats.POSITION_COLOR);
-
-            float zPos = 0;
-
-            screen.vertex(matrices.peek().getPositionMatrix(),1.0f,2,zPos).color(1.0f,1.0f,0,0); // top left
-            screen.vertex(matrices.peek().getPositionMatrix(),1.0f,-0f,zPos).color(1.0f,1.0f,0,0); // bottom left
-            screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,-0f,zPos).color(1.0f,1.0f,0,0); // bottom right
-            screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,2f,zPos).color(1.0f,1.0f,0,0); // top right
-
-            // backface
-
-            screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,2f,zPos).color(1.0f,1.0f,0,0); // top right
-            screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,-0f,zPos).color(1.0f,1.0f,0,0); // bottom right
-            screen.vertex(matrices.peek().getPositionMatrix(),1.0f,-0f,zPos).color(1.0f,1.0f,0,0); // bottom left
-            screen.vertex(matrices.peek().getPositionMatrix(),1.0f,2,zPos).color(1.0f,1.0f,0,0); // top left
-
-            var b = screen.end();
-
-            BufferRenderer.draw(b);
-            b.close();
-
-            return;
-        }
-
-        BufferBuilder screen = Tessellator.getInstance().begin(VertexFormat.DrawMode.QUADS,VertexFormats.POSITION_TEXTURE);
-
-        float zPos = 0;
-
-        screen.vertex(matrices.peek().getPositionMatrix(),1.0f,2,zPos).texture(0,0); // top left
-        screen.vertex(matrices.peek().getPositionMatrix(),1.0f,-0f,zPos).texture(0,1); // bottom left
-        screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,-0f,zPos).texture(1,1); // bottom right
-        screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,2f,zPos).texture(1,0); // top right
-
-        // backface
-
-        screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,2f,zPos).texture(1,0); // top right
-        screen.vertex(matrices.peek().getPositionMatrix(),-1.0f,-0f,zPos).texture(1,1); // bottom right
-        screen.vertex(matrices.peek().getPositionMatrix(),1.0f,-0f,zPos).texture(0,1); // bottom left
-        screen.vertex(matrices.peek().getPositionMatrix(),1.0f,2,zPos).texture(0,0); // top left
-
-        var b = screen.end();
-
-        BufferRenderer.draw(b);
-        b.close();
 
     }
 
