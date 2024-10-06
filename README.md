@@ -1,10 +1,10 @@
+Methane is no longer in development, and the rewrite diverges too much from the original intent to be published as Methane. Please remove this mod from your instances/modpacks.
+
 [<img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg">](https://modrinth.com/mod/methane)  &nbsp;&nbsp;&nbsp; 
 
-(Methane has been taken down on Curseforge due to me only linking to modrinth).
 
 
 # Methane
-A Fabric/Quilt performance mod. A rewrite is pending, and I'll get to it when I have the time.
 
 ### for server admins
 There is a tool to manage fullbright settings for Methane clients, [available here.](https://github.com/AnOpenSauceDev/Methane-Server-Utils)
