@@ -1,4 +1,4 @@
-Methane is no longer in development, and the rewrite diverges too much from the original intent to be published as Methane. Please remove this mod from your instances/modpacks.
+Methane is no longer in development, and the rewrite diverges too much from the original intent to be published as Methane. Please remove this mod from your instances/modpacks, as bugfixes/support will no longer be given.
 
 [<img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg">](https://modrinth.com/mod/methane)  &nbsp;&nbsp;&nbsp; 
 
