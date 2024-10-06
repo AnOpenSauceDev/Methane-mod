@@ -40,8 +40,6 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation "maven.modrinth:libmcdev:${project.libmcdev_version}" // libMCdev
-    include "maven.modrinth:libmcdev:${libmcdev_version}" // bakes libMCDev into the mod
 }
 
 processResources {

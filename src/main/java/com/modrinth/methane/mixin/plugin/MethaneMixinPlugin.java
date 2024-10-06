@@ -1,17 +1,13 @@
 package com.modrinth.methane.mixin.plugin;
 
-import com.github.anopensaucedev.libmcdevfabric.Debug;
-import com.github.anopensaucedev.libmcdevfabric.Libmcdev;
-import com.modrinth.methane.Methane;
-import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
+// todo, control from
 public class MethaneMixinPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {
@@ -25,18 +21,7 @@ public class MethaneMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if(Objects.equals(mixinClassName, "com.modrinth.methane.mixin.ParticleMixin") && FabricLoader.getInstance().isModLoaded("ironsspellbooks")){
-            Methane.MethaneLogger.error("Disabling Methane's Particle Optimization Mixin due to Iron's Spellbooks being installed!");
-            return false;
-        }
-        if(Objects.equals(mixinClassName, "com.modrinth.methane.mixin.ParticleMixin") && FabricLoader.getInstance().isModLoaded("ichor")){
-            Methane.MethaneLogger.error("Disabling Methane's Particle Optimization Mixin due to Ichor (Lunar Client)'s game-breaking particle mixin");
-            return false;
-        }
-        if(Objects.equals(mixinClassName, "com.modrinth.methane.mixin.ToastManagerMixin") && FabricLoader.getInstance().isModLoaded("toastkiller")){
-            Methane.MethaneLogger.warn("Overriding Methane's toast handler to use The Open Sauce Toast Killer.");
-            return false;
-        }
+        // TODO: Methane Mixin Config stuff
         return true;
     }
 
@@ -47,7 +32,7 @@ public class MethaneMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public List<String> getMixins() {
-        return null;
+        return List.of();
     }
 
     @Override

@@ -9,6 +9,9 @@ public class MethaneConstants {
 
     public static final String MOD_NAME = "Methane";
 
+
+    public static boolean IS_CLIENT = false;
+
     //public static final Identifier METHANE_STATE_PACKET = new Identifier("methane_server","statepacket");
 
    // public static final Identifier METHANE_RESP_PACKET = new Identifier("methane_server","pong");
