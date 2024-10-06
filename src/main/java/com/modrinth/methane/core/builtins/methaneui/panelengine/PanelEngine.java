@@ -1,6 +1,8 @@
 package com.modrinth.methane.core.builtins.methaneui.panelengine;
 
 
+import net.minecraft.util.Identifier;
+
 public class PanelEngine {
 
     /// Panel Engine.
@@ -9,6 +11,5 @@ public class PanelEngine {
     /// If they're too far to realistically see it, pressing that keybind will bring it up again, and the player can then close it by pressing again.
     /// this is mainly intended for VR, but will drive rendering for everything regardless.
 
-    public static PanelFramebuffer testFB = new PanelFramebuffer();
 
 }

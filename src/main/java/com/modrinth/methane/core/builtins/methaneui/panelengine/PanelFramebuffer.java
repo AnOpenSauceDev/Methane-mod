@@ -11,7 +11,6 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.*;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.NativeImageBackedTexture;
-import net.minecraft.client.util.ScreenshotRecorder;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
@@ -19,16 +18,26 @@ import org.joml.Matrix4f;
 
 public class PanelFramebuffer {
 
-    // use `beginWrite` and `endWrite`. The former take over render calls and the latter to restore render output to Minecraft's Framebuffer.
-    SimpleFramebuffer panelFramebuffer = new SimpleFramebuffer(640,480,true,true);
+    public Identifier FRAMEBUFFER_ID;
+    public XRPanel parentXRPanel;
 
-    public static ObjModel sTest = new ObjModel(Identifier.of("methane","sphere"), ObjModel.vertexBehaviour.TRIANGLES,false);
+    public PanelFramebuffer(XRPanel parent,boolean resizeable, int x, int y){
+        this.FRAMEBUFFER_ID = Identifier.of(parent.XR_PANEL_ID.getNamespace(),parent.XR_PANEL_ID.getPath() + ".framebuffer");
+        this.parentXRPanel = parent;
+
+        panelFramebuffer = new SimpleFramebuffer(x,y,true,true);
+    }
+
+    // use `beginWrite` and `endWrite`. The former take over render calls and the latter to restore render output to Minecraft's Framebuffer.
+    SimpleFramebuffer panelFramebuffer;
+
+    //public static ObjModel sTest = new ObjModel(Identifier.of("methane","sphere"), ObjModel.vertexBehaviour.TRIANGLES,false);
 
 
     public void renderAsQuad(VertexConsumerProvider provider, MatrixStack matrices,float yaw){
 
         // framebuffer setup
-        panelFramebuffer.initFbo(640,480,false); // should probably handle this in a better way
+        panelFramebuffer.initFbo(panelFramebuffer.textureWidth,panelFramebuffer.textureHeight,false); // should probably handle this in a better way
         panelFramebuffer.setClearColor(0.0f,0.0f,0.0f,0.0f);
         panelFramebuffer.clear(true);
 
@@ -62,7 +71,8 @@ public class PanelFramebuffer {
         mtx2.peek().getPositionMatrix().scale(0.1f,0.1f,0.1f);
         mtx2.peek().getPositionMatrix().translate(-0.5f,-0.5f,0.0f);
 
-        sTest.renderModel(provider,mtx2,true,0,0,0);
+        //sTest.renderModel(provider,mtx2,true,0,0,0);
+        parentXRPanel.panelRenderCallback(provider,mtx2);
 
         var dc = new DrawContext(MinecraftClient.getInstance(),MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers());
 
@@ -73,31 +83,28 @@ public class PanelFramebuffer {
 
         RenderSystem.applyModelViewMatrix();
 
-        NativeImage nativeImage = new NativeImage(640, 480, false);
+        NativeImage nativeImage = new NativeImage(panelFramebuffer.textureWidth, panelFramebuffer.textureHeight, false);
         RenderSystem.bindTexture(panelFramebuffer.getColorAttachment());
         nativeImage.loadFromTextureImage(0, true);
         nativeImage.mirrorVertically();
 
         // get our texture before being rid of the framebuffer
-        MinecraftClient.getInstance().getTextureManager().registerTexture(Identifier.of("methane","panel_fb_x"),new NativeImageBackedTexture(nativeImage));
+        MinecraftClient.getInstance().getTextureManager().registerTexture(FRAMEBUFFER_ID,new NativeImageBackedTexture(nativeImage));
 
         panelFramebuffer.delete();
 
-
         HackRenderTarget(true);
 
+        drawOutputAsQuad(matrices,yaw); // keep for now as a debug
+    }
 
-
-
-        dc = new DrawContext(MinecraftClient.getInstance(),MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers());
+    public void drawOutputAsQuad(MatrixStack matrices,float yaw){
+        var dc = new DrawContext(MinecraftClient.getInstance(),MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers());
 
         dc.getMatrices().loadIdentity();
         dc.getMatrices().multiplyPositionMatrix(matrices.peek().getPositionMatrix());
         dc.getMatrices().peek().getPositionMatrix().rotateY(-(yaw * MathHelper.RADIANS_PER_DEGREE)).translate(-1.25f,0.75f,1.5f).scale(0.005f);
-        dc.drawTexture(Identifier.of("methane","panel_fb_x"),0,0,0,0,640,480,640,480);
-
-
-
+        dc.drawTexture(FRAMEBUFFER_ID,0,0,0,0, panelFramebuffer.textureWidth,panelFramebuffer.textureHeight,panelFramebuffer.textureWidth,panelFramebuffer.textureHeight);
 
     }
 
@@ -115,7 +122,7 @@ public class PanelFramebuffer {
 
         }else {
 
-            ((RenderPhaseGetter) RenderPhase.MAIN_TARGET).setTarget(new RenderPhase.Target("throwaway_panel", () -> {
+            ((RenderPhaseGetter) RenderPhase.MAIN_TARGET).setTarget(new RenderPhase.Target(FRAMEBUFFER_ID.toString(), () -> {
                 panelFramebuffer.beginWrite(false);
             }, () -> {
                 MinecraftClient.getInstance().getFramebuffer().beginWrite(false);

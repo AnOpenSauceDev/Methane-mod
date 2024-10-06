@@ -286,10 +286,15 @@ public class ObjModel {
 
     public Vector3f SunDirection = new Vector3f(0.5f,-1,0.5f).normalize(); // the fake light point's direction
 
+    public static final Material FALLBACK_MATERIAL = new Material();
 
     float shine = 2f;
 
     public int shadeWithLight(Vector3f normal, Material material){
+
+        if(material == null){
+            material = FALLBACK_MATERIAL;
+        }
 
         Vector3f between = new Vector3f(0,0,1).add(SunDirection).normalize();
         float specular = (float) Math.pow(Math.max(0,new Vector3f(normal).dot(between)),material.specular);
